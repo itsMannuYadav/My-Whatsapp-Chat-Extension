@@ -1041,3 +1041,263 @@ td.no { color: var(--ink-faint); }
 .center { text-align: center; margin-inline: auto; }
 .mt-lg { margin-top: 56px; }
 .tabular { font-variant-numeric: tabular-nums; }
+
+/* =========================================================
+   Demo walkthrough (/demo) — a scripted, replayable animation
+   of the whole export flow: pick a chat → click the icon →
+   choose depth → process → download → open the folder → the
+   result. One persistent "device frame" whose inner scene
+   swaps; a single cursor glides between scenes via CSS
+   transition on its own top/left, independent of scene remounts.
+   ========================================================= */
+.demo-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.demo-frame {
+  width: 100%;
+  max-width: 560px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px hsl(var(--shadow-color) / 0.35);
+}
+.demo-viewport {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at top right, color-mix(in srgb, var(--accent) 6%, transparent), transparent 55%),
+    var(--bg-raised);
+}
+@media (max-width: 480px) {
+  .demo-viewport { min-height: 460px; }
+}
+
+.demo-scene {
+  position: absolute;
+  inset: 0;
+  padding: 18px 16px 22px;
+  display: flex;
+  flex-direction: column;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes demo-scene-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.99); }
+    to { opacity: 1; transform: none; }
+  }
+  .demo-scene { animation: demo-scene-in 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
+}
+
+/* Cursor: a persistent sibling of the scene stack, glides via left/top transition */
+.demo-cursor {
+  position: absolute;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  transform: translate(-4px, -2px);
+  filter: drop-shadow(0 3px 6px hsl(var(--shadow-color) / 0.5));
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .demo-cursor { transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1), top 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+}
+.demo-cursor svg { display: block; }
+.demo-cursor .ring {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-bright);
+  opacity: 0;
+  transform: scale(0.4);
+}
+.demo-cursor.is-clicking .ring {
+  animation: demo-click-ring 0.42s ease-out;
+}
+@keyframes demo-click-ring {
+  0% { opacity: 0.9; transform: scale(0.4); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+.demo-cursor.is-clicking svg { animation: demo-click-dip 0.42s ease-out; }
+@keyframes demo-click-dip {
+  30% { transform: scale(0.85); }
+}
+
+/* Scene 1 — chat list */
+.demo-sidebar { display: flex; flex-direction: column; gap: 4px; margin: auto 0; }
+.demo-chat-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: 9px;
+  border: 1px solid transparent;
+}
+.demo-chat-row.is-active { background: var(--surface); border-color: var(--line); box-shadow: 0 8px 20px -14px hsl(var(--shadow-color) / 0.5); }
+.demo-avatar {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff; font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+.demo-chat-name { font-size: 13.5px; font-weight: 600; }
+.demo-chat-snip { font-size: 11.5px; color: var(--ink-faint); }
+.demo-chat-time { margin-left: auto; font-size: 10.5px; color: var(--ink-faint); flex-shrink: 0; }
+
+/* Scene 2 — chat open, toolbar icon */
+.demo-toolbar-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #f3fbf7;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  box-shadow: 0 6px 16px -6px hsl(var(--shadow-color) / 0.6);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .demo-toolbar-icon::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 10px;
+    border: 1.5px solid var(--accent-bright);
+    animation: demo-pulse-ring 1.8s ease-out infinite;
+  }
+}
+@keyframes demo-pulse-ring {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  100% { opacity: 0; transform: scale(1.25); }
+}
+
+/* Scene 3 — panel */
+.demo-panel-lg { position: static; width: 100%; max-width: 260px; margin: auto; }
+.demo-panel-lg .segmented span { cursor: default; }
+.demo-export-btn { width: 100%; margin-top: 2px; }
+
+/* Scene 4 — processing (reuses .ep-steps / .ep-bar-wrap from the hero mock) */
+.demo-processing { margin: auto 0; display: flex; flex-direction: column; gap: 14px; max-width: 300px; margin-inline: auto; width: 100%; }
+.demo-processing .ep-steps i { width: 9px; height: 9px; }
+.demo-processing .ep-steps span { font-size: 9.5px; }
+.demo-processing .ep-bar-wrap { height: 7px; }
+.demo-processing .ep-status { font-size: 12px; text-align: center; }
+
+/* Scene 5 — download shelf */
+.demo-download-shelf { margin-top: auto; display: flex; }
+.demo-download-chip {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 12px;
+  box-shadow: 0 14px 28px -18px hsl(var(--shadow-color) / 0.5);
+}
+.demo-download-ring {
+  --p: 0;
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--surface-2) 0);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.demo-download-ring::before {
+  content: "";
+  position: absolute; inset: 3px; border-radius: 50%; background: var(--surface);
+}
+.demo-download-ring::after {
+  content: "↓";
+  position: relative;
+  font-size: 11px; font-weight: 700; color: var(--accent-strong);
+}
+.demo-download-ring.is-done::after { content: "✓"; }
+.demo-download-name { font-size: 12.5px; font-weight: 600; }
+.demo-download-sub { font-size: 10.5px; color: var(--ink-faint); }
+
+/* Scene 6 — folder / file list */
+.demo-folder { margin: auto 0; display: flex; flex-direction: column; gap: 6px; }
+.demo-folder-path {
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-faint);
+  padding-bottom: 6px; margin-bottom: 4px; border-bottom: 1px solid var(--line);
+}
+.demo-file-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px; font-size: 12.5px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.demo-file-row.is-opening { border-color: var(--accent); transform: scale(0.98); }
+.demo-file-ico {
+  width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; font-family: var(--font-mono);
+}
+.demo-file-ico.html { background: var(--accent-wash); color: var(--accent-strong); }
+.demo-file-ico.css { background: var(--brass-wash); color: var(--brass); }
+.demo-file-ico.json { background: var(--surface-2); color: var(--ink-soft); }
+.demo-file-ico.folder { background: var(--danger-wash); color: var(--danger); }
+.demo-file-size { margin-left: auto; font-size: 10.5px; color: var(--ink-faint); }
+
+/* Scene 7 — result */
+.demo-result-badge {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent-strong); background: var(--accent-wash);
+  border-radius: 999px; padding: 4px 10px; margin-bottom: 10px;
+}
+.demo-result-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.demo-highlight-pulse { animation: demo-highlight 1.6s ease-out 1; }
+@keyframes demo-highlight {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  100% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+
+/* Caption + controls, below the frame */
+.demo-caption { width: 100%; max-width: 560px; text-align: center; min-height: 84px; }
+.demo-caption .eyebrow { justify-content: center; margin-bottom: 8px; }
+.demo-caption h3 { font-size: 19px; margin-bottom: 6px; }
+.demo-caption p { color: var(--ink-soft); font-size: 14.5px; max-width: 46ch; margin-inline: auto; }
+
+.demo-timebar { width: 100%; max-width: 560px; height: 3px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.demo-timebar-fill { height: 100%; width: 0%; background: var(--accent); border-radius: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .demo-timebar-fill.is-animating { animation-name: demo-time-fill; animation-timing-function: linear; animation-fill-mode: forwards; }
+}
+@keyframes demo-time-fill { from { width: 0%; } to { width: 100%; } }
+
+.demo-controls { display: flex; align-items: center; gap: 14px; }
+.demo-iconbtn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.demo-iconbtn:hover { border-color: var(--accent); color: var(--accent-strong); }
+.demo-iconbtn:active { transform: scale(0.94); }
+.demo-iconbtn svg { width: 15px; height: 15px; }
+
+.demo-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 560px; }
+.demo-dot {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.demo-dot:hover { border-color: var(--line-strong); color: var(--ink); }
+.demo-dot[aria-current="step"] {
+  background: var(--accent-wash);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  color: var(--accent-strong);
+  font-weight: 600;
+}

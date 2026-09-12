@@ -112,7 +112,7 @@ export default function HomePage() {
           <div className="section-head reveal">
             <span className="eyebrow">How the export actually happens</span>
             <h2>The same four steps you&rsquo;d see in the panel.</h2>
-            <p>No screen-scraping. The extension talks to WhatsApp Web&rsquo;s own in-page data layer, in this order, every time.</p>
+            <p>No screen-scraping. The extension talks to WhatsApp Web&rsquo;s own in-page data layer, in this order, every time. <Link className="link-accent" href="/demo">Watch it happen →</Link></p>
           </div>
           <div className="ledger">
             <div className="ledger-row reveal">
