@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — WA Rich Export</title>
+<meta name="description" content="Answers about how WA Rich Export handles groups, video, history limits, privacy, and contact renaming.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>WA Rich Export</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="install.html">Install</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="install.html">Get started</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section style="padding-bottom:16px;">
+    <div class="container" style="max-width:720px; display:flex; flex-direction:column; gap:16px;">
+      <span class="eyebrow reveal">Questions, answered plainly</span>
+      <h1 class="reveal" style="font-size:clamp(30px,4vw,44px);">Frequently asked questions</h1>
+      <p class="reveal" style="color:var(--ink-soft); font-size:17px;">If something's missing here, the <a href="privacy.html" style="color:var(--accent-strong); font-weight:600;">privacy policy</a> covers data handling in more depth.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px;">
+    <div class="container" style="max-width:760px;">
+      <div class="faq-list">
+
+        <details class="faq-item reveal">
+          <summary>Does this work on group chats, not just DMs?<span class="plus"></span></summary>
+          <div class="faq-a">Yes. Group exports label each message with its sender's name, render @mentions as chips, and flag forwarded messages — all of that is DM-only content otherwise, since a one-to-one chat has no sender labels to show.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Will a WhatsApp Web update break this?<span class="plus"></span></summary>
+          <div class="faq-a">It's possible. The extension reads WhatsApp's internal <code style="font-family:var(--font-mono);">WAWeb*</code> modules by name, and WhatsApp occasionally renames or restructures them. The injector uses defensive fallbacks across a few known module shapes, but a large WhatsApp Web release can still require an update on this end.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Does WA Rich Export send my messages anywhere?<span class="plus"></span></summary>
+          <div class="faq-a">No. The extension makes no network requests of its own. It only reads data already decrypted in your browser's memory and calls WhatsApp Web's own media-download functions — the same ones the page already uses when you view an image or play a voice note yourself.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Can it export video messages?<span class="plus"></span></summary>
+          <div class="faq-a">Not yet as playable video. A video message keeps its exact place in the conversation but comes through as a labelled placeholder rather than a downloaded file, for now.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>How far back in history can I go?<span class="plus"></span></summary>
+          <div class="faq-a">Only as far as WhatsApp Web has already synced to this session — older messages that live solely on your phone aren't reachable from the browser tab. Within that, you choose the last 1,000 messages, the last 5,000, or everything currently synced.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Is this affiliated with WhatsApp or Meta?<span class="plus"></span></summary>
+          <div class="faq-a">No. WA Rich Export is an independent, unofficial project. WhatsApp is a trademark of WhatsApp LLC, and this extension is not endorsed by or associated with WhatsApp or Meta.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Where does the exported file go?<span class="plus"></span></summary>
+          <div class="faq-a">Wherever your browser normally saves downloads. The export finishes as a single <code style="font-family:var(--font-mono);">.zip</code> — unzip it and open <code style="font-family:var(--font-mono);">index.html</code> in any browser, no internet connection or extension required to read it later.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Can I rename people in an exported chat?<span class="plus"></span></summary>
+          <div class="faq-a">Yes — every archive ends with a "Recognize people" panel where you can rename a contact for your own reading. It only changes what you see in that open browser tab; the archive file on disk keeps its original names, and a page refresh reverts to them.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Do I need to keep the tab open while it exports?<span class="plus"></span></summary>
+          <div class="faq-a">Yes. The export runs inside your live WhatsApp Web tab, so keep it open and on the same chat until the download finishes — closing it or navigating away mid-export cancels the job.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>The panel didn't show up — what now?<span class="plus"></span></summary>
+          <div class="faq-a">Confirm the extension is enabled on its extensions page, then reload the <code style="font-family:var(--font-mono);">web.whatsapp.com</code> tab. The panel only injects on that domain and appears once a chat is open.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container center" style="max-width:600px; display:flex; flex-direction:column; gap:18px; align-items:center;">
+      <h2 class="reveal">Still have a question?</h2>
+      <p class="reveal" style="color:var(--ink-soft);">Check the full privacy policy, or dig into exactly what the extension exports.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-primary" href="privacy.html">Read the privacy policy</a>
+        <a class="btn btn-ghost" href="features.html">Browse all features</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>WA Rich Export</a>
+        <p style="margin-top:14px;">Turns the WhatsApp Web chat you have open into an offline, WhatsApp-styled archive — replies and media included. Runs entirely on your machine.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="install.html">Install guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Independent project — not affiliated with WhatsApp or Meta.</span>
+      <span>WhatsApp is a trademark of WhatsApp LLC.</span>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

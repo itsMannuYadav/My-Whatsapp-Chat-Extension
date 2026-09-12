@@ -1,0 +1,89 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of the exported chat archive layout">
+  <defs>
+    <linearGradient id="ephead" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0e7a5b"/>
+      <stop offset="100%" stop-color="#0a5d45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="560" rx="16" fill="#f7faf6" stroke="#cdd8cb"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="900" height="70" rx="16" fill="url(#ephead)"/>
+  <rect x="0" y="40" width="900" height="30" fill="#0a5d45"/>
+  <text x="32" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#f3fbf7">Design Team</text>
+  <rect x="228" y="18" width="52" height="18" rx="9" fill="#054640"/>
+  <text x="254" y="31" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#25d366" text-anchor="middle">GROUP</text>
+  <text x="32" y="56" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#cfe7dd">842 messages · exported 12 Sep 2026</text>
+
+  <!-- chat surface -->
+  <g transform="translate(0,86)" font-family="Arial, Helvetica, sans-serif">
+
+    <text x="450" y="0" font-size="11" fill="#7c8c82" text-anchor="middle" letter-spacing="1">TODAY</text>
+
+    <!-- incoming with sender name -->
+    <text x="32" y="26" font-size="11.5" font-weight="700" fill="#0e7a5b">Priya Nair</text>
+    <rect x="32" y="34" width="330" height="46" rx="10" fill="#ffffff" stroke="#cdd8cb"/>
+    <text x="48" y="63" font-size="13.5" fill="#101d17">Looping in @Design Team on the export</text>
+
+    <!-- outgoing reply w/ quote -->
+    <g transform="translate(538,34)">
+      <rect x="0" y="0" width="330" height="86" rx="10" fill="#dcefe5" stroke="#9fd2bc"/>
+      <rect x="10" y="10" width="4" height="30" fill="#b8863a"/>
+      <text x="20" y="24" font-size="11" fill="#4a5a51">Priya Nair</text>
+      <text x="20" y="38" font-size="11" fill="#4a5a51">Looping in @Design Team on the export</text>
+      <text x="18" y="62" font-size="13.5" fill="#101d17">On it — exporting the whole channel now 🗂️</text>
+      <text x="312" y="78" font-size="10.5" fill="#7c8c82" text-anchor="end">10:42 ✓✓</text>
+    </g>
+
+    <!-- sticker -->
+    <rect x="32" y="136" width="86" height="86" rx="12" fill="#ffffff" stroke="#cdd8cb"/>
+    <text x="75" y="190" font-size="42" text-anchor="middle">🧋</text>
+
+    <!-- document card outgoing -->
+    <g transform="translate(538,152)">
+      <rect x="0" y="0" width="330" height="58" rx="10" fill="#dcefe5" stroke="#9fd2bc"/>
+      <rect x="12" y="12" width="34" height="34" rx="6" fill="#f7e4df"/>
+      <text x="29" y="33" font-size="9" font-weight="700" fill="#a53a2c" text-anchor="middle">PDF</text>
+      <text x="58" y="27" font-size="13" font-weight="700" fill="#101d17">Q3-report.pdf</text>
+      <text x="58" y="42" font-size="11" fill="#7c8c82">2.1 MB</text>
+    </g>
+
+    <!-- voice note incoming -->
+    <g transform="translate(32,246)">
+      <rect x="0" y="0" width="230" height="46" rx="23" fill="#ffffff" stroke="#cdd8cb"/>
+      <circle cx="26" cy="23" r="15" fill="#0e7a5b"/>
+      <path d="M22 15 L34 23 L22 31 Z" fill="#f3fbf7"/>
+      <g stroke="#aebcac" stroke-width="3" stroke-linecap="round">
+        <line x1="52" y1="17" x2="52" y2="29"/>
+        <line x1="60" y1="12" x2="60" y2="34"/>
+        <line x1="68" y1="19" x2="68" y2="27"/>
+        <line x1="76" y1="9" x2="76" y2="37"/>
+        <line x1="84" y1="16" x2="84" y2="30"/>
+        <line x1="92" y1="20" x2="92" y2="26"/>
+        <line x1="100" y1="13" x2="100" y2="33"/>
+        <line x1="108" y1="18" x2="108" y2="28"/>
+      </g>
+      <text x="196" y="27" font-size="11" fill="#7c8c82" text-anchor="middle">0:14</text>
+    </g>
+
+    <!-- alias panel teaser -->
+    <g transform="translate(32,326)">
+      <rect x="0" y="0" width="836" height="118" rx="12" fill="#ffffff" stroke="#cdd8cb"/>
+      <text x="20" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#101d17">Recognize people</text>
+      <text x="20" y="48" font-size="12" fill="#7c8c82">Rename a contact for your own reading — the archive file keeps its original names.</text>
+
+      <rect x="20" y="64" width="380" height="38" rx="8" fill="#eef2ee" stroke="#cdd8cb"/>
+      <text x="34" y="87" font-size="12" fill="#4a5a51">Exported as "Priya N."</text>
+      <text x="200" y="87" font-size="14" fill="#b8863a">→</text>
+      <rect x="222" y="72" width="160" height="22" rx="5" fill="#ffffff" stroke="#cdd8cb"/>
+      <text x="232" y="87" font-size="12" font-weight="700" fill="#101d17">Priya (Design Lead)</text>
+
+      <rect x="436" y="64" width="380" height="38" rx="8" fill="#eef2ee" stroke="#cdd8cb"/>
+      <text x="450" y="87" font-size="12" fill="#4a5a51">Exported as "+91 98••• •••2"</text>
+      <text x="200" y="87" font-size="14" fill="#b8863a">→</text>
+    </g>
+  </g>
+
+  <text x="450" y="546" font-family="'Courier New', monospace" font-size="11" fill="#7c8c82" text-anchor="middle">index.html · styles.css · chat.json · media/ — opens offline, no extension required</text>
+</svg>

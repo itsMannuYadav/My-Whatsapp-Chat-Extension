@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features — WA Rich Export</title>
+<meta name="description" content="Every feature of WA Rich Export: formatting, jump-to reply threads, inline media, group senders and mentions, contact aliasing, live theme sync, and history depth control.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>WA Rich Export</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="features.html" aria-current="page">Features</a>
+      <a href="install.html">Install</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="install.html">Get started</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section style="padding-bottom:24px;">
+    <div class="container" style="max-width:720px; display:flex; flex-direction:column; gap:16px;">
+      <span class="eyebrow reveal">Everything the archive keeps</span>
+      <h1 class="reveal" style="font-size:clamp(30px,4vw,44px);">A tour of what shows up in your export.</h1>
+      <p class="reveal" style="color:var(--ink-soft); font-size:17px;">Each of these is a real part of the same <code style="font-family:var(--font-mono); background:var(--surface-2); border:1px solid var(--line); padding:1px 6px; border-radius:5px;">index.html</code> the extension writes — not a promise, a rendering.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+
+      <div class="feature-row">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Formatting</span>
+          <h2>WhatsApp's own markdown, rendered properly</h2>
+          <p><code style="font-family:var(--font-mono);">*bold*</code>, <code style="font-family:var(--font-mono);">_italic_</code>, <code style="font-family:var(--font-mono);">~strike~</code> and <code style="font-family:var(--font-mono);">`code`</code> become real HTML, not literal asterisks. URLs and email addresses turn into clickable links automatically.</p>
+          <ul>
+            <li>Emoji-only messages render large, the way WhatsApp itself displays them</li>
+            <li>Fenced <code style="font-family:var(--font-mono);">```code```</code> blocks keep their monospace formatting</li>
+          </ul>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="bubble in">Check the <strong>final</strong> brief — it's in <code style="font-family:var(--font-mono); background:var(--surface-2); padding:0 4px; border-radius:4px;">brief_v3.pdf</code></div>
+            <div class="bubble out">Got it, reviewing <em>now</em>. Ping me at ops@studio.example if it's urgent<span class="tick">10:12 ✓✓</span></div>
+            <div class="bubble in" style="font-size:26px; text-align:center; background:transparent; border:none; padding:2px 0;">🎉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Replies</span>
+          <h2>Quoted replies that jump to their source</h2>
+          <p>Every reply keeps its quote bar exactly as WhatsApp rendered it. Click a quote inside the exported archive and the page scrolls straight to the original message — even if it's thousands of lines up — and briefly highlights it.</p>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="bubble in">Reminder: standup moved to 9:30</div>
+            <div class="bubble out">
+              <div class="quote">You: Reminder: standup moved to 9:30</div>
+              Got it, updating my calendar
+              <span class="tick">09:04 ✓✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Media</span>
+          <h2>Stickers, photos, documents and voice notes</h2>
+          <p>Media is downloaded through WhatsApp's own decrypt path and saved into a <code style="font-family:var(--font-mono);">media/</code> folder next to the archive — images sit inline, documents become downloadable cards, voice notes become playable audio.</p>
+          <ul>
+            <li>Video keeps its place in the conversation as a labelled placeholder for now</li>
+            <li>Only media already cached by this WhatsApp Web session can be recovered</li>
+          </ul>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="bubble in" style="font-size:30px; text-align:center; background:transparent; border:none;">🧋</div>
+            <div class="bubble out">
+              <div class="doc-chip"><div class="doc-ico">PDF</div><div><div class="doc-name">Q3-report.pdf</div><div class="doc-sub">2.1 MB</div></div></div>
+              <span class="tick">14:20 ✓✓</span>
+            </div>
+            <div class="bubble in">
+              <div class="voice-note">
+                <span class="play"></span>
+                <span class="wave">
+                  <span style="height:6px;"></span><span style="height:12px;"></span><span style="height:5px;"></span>
+                  <span style="height:14px;"></span><span style="height:8px;"></span><span style="height:11px;"></span>
+                  <span style="height:5px;"></span><span style="height:9px;"></span>
+                </span>
+                <span style="font-size:10.5px; color:var(--ink-faint); font-family:var(--font-mono);">0:14</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Groups</span>
+          <h2>Senders, mentions and forwards, labelled</h2>
+          <p>Group exports show who sent each message, render <span class="mention-chip">@name</span> mentions as chips instead of raw phone IDs, and flag forwarded messages — matching what you'd see live in WhatsApp Web.</p>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div style="font-size:12px; font-weight:700; color:var(--accent-strong); margin-bottom:2px;">Priya Nair</div>
+            <div class="bubble in">Looping in <span class="mention-chip">@Design Team</span> on this one</div>
+            <div class="bubble in" style="margin-top:6px;">
+              <div style="font-size:10.5px; color:var(--ink-faint); margin-bottom:3px;">↪ Forwarded</div>
+              Here's the finalized brand kit
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Contact aliasing</span>
+          <h2>Recognize people, without editing the file</h2>
+          <p>Every archive ends with a small "Recognize people" panel. Match a saved contact to a phone number and rename it for your own reading — the change applies only in your open browser tab. The archive file on disk always keeps its original names.</p>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="alias-mock">
+              <div class="alias-row"><span class="alias-from">Exported as "Priya N."</span><span class="arrow">→</span><span class="alias-to">Priya (Design Lead)</span></div>
+              <div class="alias-row"><span class="alias-from">Exported as "+91 98••• •••2"</span><span class="arrow">→</span><span class="alias-to">Delivery bot</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal">
+          <span class="card-tag">Theme sync</span>
+          <h2>Follows WhatsApp Web's own theme, live</h2>
+          <p>Toggle WhatsApp Web between light and dark and the export panel switches with it immediately — no separate setting to hunt for, no jarring mismatch floating over your chat.</p>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="theme-toggle-mock">
+              <div class="swatch dark"><div class="bar"></div><div class="bar short"></div><div class="label">Dark</div></div>
+              <div class="swatch light"><div class="bar"></div><div class="bar short"></div><div class="label">Light</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy reveal">
+          <span class="card-tag">History depth</span>
+          <h2>You decide how far back it goes</h2>
+          <p>Pick the last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this WhatsApp Web session has already synced. Only messages already loaded here are ever available — older history that lives solely on your phone can't be reached.</p>
+        </div>
+        <div class="feature-visual reveal">
+          <div class="mini-chat">
+            <div class="segmented">
+              <span class="active">1,000</span>
+              <span>5,000</span>
+              <span>All synced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Said plainly</span>
+        <h2>What it doesn't do — yet</h2>
+        <p>A short, honest list, so there are no surprises after you export.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card reveal">
+          <span class="card-tag">Video</span>
+          <h3>Kept as a placeholder</h3>
+          <p>Video messages stay in their exact spot in the conversation but download as a labelled placeholder rather than a playable file, for now.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-tag">History</span>
+          <h3>Synced messages only</h3>
+          <p>WhatsApp Web only ever holds what it has synced from your phone. If a message never loaded here, the extension can't retrieve it either.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-tag">Media recovery</span>
+          <h3>Best-effort by design</h3>
+          <p>If WhatsApp hasn't cached decryptable bytes for a file, that message keeps a typed placeholder instead of a broken link.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container center" style="max-width:600px; display:flex; flex-direction:column; gap:18px; align-items:center;">
+      <h2 class="reveal">Ready to try it on a real chat?</h2>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-primary" href="install.html">Install in a minute</a>
+        <a class="btn btn-ghost" href="faq.html">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>WA Rich Export</a>
+        <p style="margin-top:14px;">Turns the WhatsApp Web chat you have open into an offline, WhatsApp-styled archive — replies and media included. Runs entirely on your machine.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="install.html">Install guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Independent project — not affiliated with WhatsApp or Meta.</span>
+      <span>WhatsApp is a trademark of WhatsApp LLC.</span>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
