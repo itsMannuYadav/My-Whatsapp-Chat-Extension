@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Rich Chat Export",
+  "version": "1.0.9",
+  "description": "Export WhatsApp Web chats (DMs & groups) to an offline WhatsApp-lookalike HTML archive with replies, stickers, images, documents, and voice notes.",
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "background": {
+    "service_worker": "src/background/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": [
+        "src/lib/jszip-forced.js",
+        "src/export/whatsapp-theme.css.js",
+        "src/export/renderer.js",
+        "src/export/zip-builder.js",
+        "src/ui/panel.js",
+        "src/content/content_bridge.js"
+      ],
+      "css": ["src/ui/panel.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/injected/store-access.js",
+        "src/injected/message-collector.js",
+        "src/injected/media-downloader.js",
+        "src/injected/injected.js"
+      ],
+      "matches": ["https://web.whatsapp.com/*"]
+    }
+  ],
+  "action": {
+    "default_title": "WhatsApp Rich Chat Export",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
