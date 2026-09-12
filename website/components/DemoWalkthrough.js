@@ -601,7 +601,7 @@ export default function DemoWalkthrough() {
         </div>
         <div className="demo-viewport" ref={stageRef}>
           {showWaWindow && (
-            <div className="wa-window">
+            <div className="wa-window" data-phase={phase.id}>
               <Sidebar chatOpen={phase.id !== 'browse'} />
               <div className="wa-main">
                 {showEmpty ? <EmptyMain /> : <ChatMain />}
