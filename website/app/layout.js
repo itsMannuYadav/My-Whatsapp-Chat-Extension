@@ -36,8 +36,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${workSans.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`no-js ${fraunces.variable} ${workSans.variable} ${jetbrainsMono.variable}`}
+      // The inline script below strips "no-js" before React hydrates, by design —
+      // this tells React that specific, expected mismatch is fine to skip over.
+      suppressHydrationWarning
+    >
       <body>
+        {/* Runs before paint: drops no-js so real browsers get the scroll-reveal
+            animation, while anyone without JS keeps content visible via the
+            .no-js CSS fallback in globals.css instead of stuck at opacity:0. */}
+        <script
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.remove('no-js')" }}
+        />
         <a className="skip-link" href="#main">Skip to content</a>
         <Header />
         {children}

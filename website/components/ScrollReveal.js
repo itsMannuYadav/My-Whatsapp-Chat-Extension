@@ -8,7 +8,10 @@ export default function ScrollReveal() {
 
   useEffect(() => {
     const prefersMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-    const reveals = document.querySelectorAll('.reveal');
+    // Elements that manage their own reveal state in React (e.g. Accordion, which
+    // also toggles className on click) opt out via data-self-managed — otherwise
+    // our classList.add here gets wiped the next time React re-renders that node.
+    const reveals = document.querySelectorAll('.reveal:not([data-self-managed])');
 
     if (!prefersMotion || !('IntersectionObserver' in window)) {
       reveals.forEach((el) => el.classList.add('is-visible'));

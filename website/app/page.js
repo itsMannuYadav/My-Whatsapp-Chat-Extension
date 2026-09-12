@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import StatCounter from '@/components/StatCounter';
 
 export default function HomePage() {
   return (
@@ -22,7 +23,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-visual reveal" aria-hidden="true">
+          <div className="hero-visual" aria-hidden="true">
             <div className="browser-mock">
               <div className="browser-chrome">
                 <div className="browser-dots"><span></span><span></span><span></span></div>
@@ -157,10 +158,10 @@ export default function HomePage() {
           </div>
 
           <div className="stat-strip mt-lg reveal">
-            <div className="stat"><b>1</b><span>host permission requested</span></div>
-            <div className="stat"><b>0</b><span>analytics or tracking scripts</span></div>
-            <div className="stat"><b>0</b><span>servers involved in an export</span></div>
-            <div className="stat"><b>4</b><span>media types recovered inline</span></div>
+            <div className="stat"><StatCounter value={1} /><span>host permission requested</span></div>
+            <div className="stat"><StatCounter value={0} /><span>analytics or tracking scripts</span></div>
+            <div className="stat"><StatCounter value={0} /><span>servers involved in an export</span></div>
+            <div className="stat"><StatCounter value={4} /><span>media types recovered inline</span></div>
           </div>
         </div>
       </section>
