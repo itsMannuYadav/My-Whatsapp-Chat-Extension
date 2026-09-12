@@ -187,20 +187,25 @@ The full policy — including how the small set of local UI preferences (panel p
 
 ## Website
 
-A full marketing site — home, feature tour, install guide, FAQ, and the privacy policy — lives in this repo under [`website/`](website/). It's plain static HTML/CSS/JS (no build step, no framework), so it deploys as-is to Vercel.
+A full marketing site — home, feature tour, install guide, FAQ, and the privacy policy — lives in this repo under [`website/`](website/). It's a Next.js (App Router) app: shared header/nav/footer as real components, one global CSS file for the whole design system, no other runtime dependencies. See [`website/README.md`](website/README.md) for local dev commands.
 
 ```
 website/
-├── index.html        # home
-├── features.html
-├── install.html
-├── faq.html
-├── privacy.html       # ← the privacy policy URL the stores ask for
-├── 404.html
-├── styles.css          # shared design system for every page
-├── site.js             # mobile nav + scroll-reveal
-├── favicon.svg
-└── vercel.json          # clean URLs (/features instead of /features.html) + asset caching
+├── app/
+│   ├── layout.js        # fonts (next/font/google, self-hosted), <Header>/<Footer>
+│   ├── globals.css        # the whole design system — tokens, components
+│   ├── page.js             # home
+│   ├── features/page.js
+│   ├── install/page.js
+│   ├── faq/page.js
+│   ├── privacy/page.js       # ← the privacy policy URL the stores ask for
+│   ├── not-found.js           # custom 404
+│   └── icon.svg                 # favicon
+├── components/
+│   ├── Header.js         # nav + mobile menu ('use client')
+│   ├── Footer.js
+│   └── ScrollReveal.js    # fade-in on scroll for .reveal elements
+└── package.json
 ```
 
 ### Deploying to Vercel
@@ -209,7 +214,7 @@ website/
 
 1. Push this repo to GitHub (it already has the `itsMannuYadav/My-Whatsapp-Chat-Extension` remote configured).
 2. On [vercel.com](https://vercel.com), **Add New… → Project**, and import this repository.
-3. When configuring the project, set **Root Directory** to `website`. Framework preset can stay "Other" — there's no build command or output directory to set for static HTML.
+3. When configuring the project, set **Root Directory** to `website`. Vercel auto-detects Next.js — build command and output directory need no changes.
 4. Click **Deploy**. Vercel gives you a `*.vercel.app` URL immediately.
 
 **Option B — Vercel CLI:**
@@ -217,6 +222,7 @@ website/
 ```bash
 npm i -g vercel
 cd website
+npm install
 vercel        # first run links/creates the project and deploys a preview
 vercel --prod # promotes to your production URL
 ```
