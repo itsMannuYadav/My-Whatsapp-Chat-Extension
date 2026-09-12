@@ -266,10 +266,52 @@ function Sidebar({ chatOpen }) {
           </div>
         </div>
         <div className="wa-chat-row">
-          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#ff9472,#e0555a)' }}>M</div>
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#ff9472,#e0555a)' }}>O</div>
           <div className="wa-chat-meta">
-            <div className="wa-chat-line1"><span className="wa-chat-name">Mom</span><span className="wa-chat-time">Yest.</span></div>
+            <div className="wa-chat-line1"><span className="wa-chat-name">Ojha ji</span><span className="wa-chat-time">Yest.</span></div>
             <div className="wa-chat-line2"><span className="wa-chat-snip">Call me when free</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#4facfe,#0072ff)' }}>R</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Ravi</span><span className="wa-chat-time">Yest.</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">🎉</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#f093fb,#e2437a)' }}>A</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Anjali</span><span className="wa-chat-time">Tue</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">See you at 6? 😄</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#43cea2,#185a9d)' }}>A</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Ayush</span><span className="wa-chat-time">Mon</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">Bhai match dekh raha?</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#f7b733,#fc4a1a)' }}>N</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Nimbu</span><span className="wa-chat-time">Mon</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">🍋🔥</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#667eea,#764ba2)' }}>A</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Aditya</span><span className="wa-chat-time">Sun</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">Sent a video</span></div>
+          </div>
+        </div>
+        <div className="wa-chat-row">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#485563,#29323c)' }}>M</div>
+          <div className="wa-chat-meta">
+            <div className="wa-chat-line1"><span className="wa-chat-name">Mannu Yadav</span><span className="wa-chat-time">Sat</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">📌 Note to self</span></div>
           </div>
         </div>
       </div>
