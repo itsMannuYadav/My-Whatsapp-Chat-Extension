@@ -11,10 +11,11 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 //   stickers, photos, documents, voice notes) are the real supported set —
 //   see the hint string in panel.js. Reactions are intentionally left out:
 //   the extension doesn't capture them.
-const CHAT_NAME = 'Design Team';
+const CHAT_NAME = 'Sundarbans';
+const ZIP_SLUG = 'sundarbans-export';
 const MSG_COUNT = 842;
 const MEDIA_COUNT = 240;
-const ZIP_NAME = 'design-team-export.zip';
+const ZIP_NAME = `${ZIP_SLUG}.zip`;
 
 const STEP_ORDER = ['history', 'normalize', 'media', 'zip'];
 const STEP_LABEL = { history: 'Load', normalize: 'Structure', media: 'Media', zip: 'Package' };
@@ -44,8 +45,8 @@ const PHASES = [
     body: 'The panel is already sitting there the moment WhatsApp Web loads — it just doesn’t have a chat to work with yet.',
     duration: 4000,
     cursorPath: [
-      { t: 1000, target: 'row-design-team' },
-      { t: 2300, target: 'row-design-team', click: true },
+      { t: 1000, target: 'row-sundarbans' },
+      { t: 2300, target: 'row-sundarbans', click: true },
     ],
   },
   {
@@ -240,7 +241,7 @@ function Sidebar({ chatOpen }) {
   return (
     <div className="wa-sidebar">
       <div className="wa-sidebar-top">
-        <div className="wa-me-avatar">Y</div>
+        <div className="wa-me-avatar">M</div>
         <div className="wa-icon-row">
           <span className="wa-icon-btn">{Icon.newChat}</span>
           <span className="wa-icon-btn">{Icon.menuDots}</span>
@@ -251,14 +252,14 @@ function Sidebar({ chatOpen }) {
       </div>
       <div className="wa-chatlist">
         <div className="wa-chat-row">
-          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#7c5cff,#5636d6)' }}>P</div>
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#7c5cff,#5636d6)' }}>V</div>
           <div className="wa-chat-meta">
-            <div className="wa-chat-line1"><span className="wa-chat-name">Priya Nair</span><span className="wa-chat-time">09:14</span></div>
+            <div className="wa-chat-line1"><span className="wa-chat-name">Vishal</span><span className="wa-chat-time">09:14</span></div>
             <div className="wa-chat-line2"><span className="wa-chat-snip">Sent a photo</span></div>
           </div>
         </div>
-        <div className={`wa-chat-row${chatOpen ? ' is-active' : ''}`} data-cursor-target="row-design-team">
-          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#00a884,#008069)' }}>D</div>
+        <div className={`wa-chat-row${chatOpen ? ' is-active' : ''}`} data-cursor-target="row-sundarbans">
+          <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#00a884,#008069)' }}>S</div>
           <div className="wa-chat-meta">
             <div className="wa-chat-line1"><span className="wa-chat-name">{CHAT_NAME}</span><span className="wa-chat-time">10:42</span></div>
             <div className="wa-chat-line2"><span className="wa-chat-snip">On it — exporting now 🗂️</span><span className="wa-unread-badge">3</span></div>
@@ -292,10 +293,10 @@ function ChatMain() {
     <>
       <div className="wa-chat-header">
         <div className="wa-chat-header-left">
-          <div className="wa-chat-header-avatar" style={{ background: 'linear-gradient(135deg,#00a884,#008069)' }}>D</div>
+          <div className="wa-chat-header-avatar" style={{ background: 'linear-gradient(135deg,#00a884,#008069)' }}>S</div>
           <div>
             <div className="wa-chat-header-name">{CHAT_NAME}</div>
-            <div className="wa-chat-header-sub">Priya Nair, Ravi Shah, You +3</div>
+            <div className="wa-chat-header-sub">Vishal, Ayush, Anjali +4</div>
           </div>
         </div>
         <div className="wa-icon-row">
@@ -307,7 +308,7 @@ function ChatMain() {
         <div className="wa-day-pill">TODAY</div>
         <div className="wa-row in">
           <div className="wa-bubble">
-            <div className="wa-sender">Priya Nair</div>
+            <div className="wa-sender">Vishal</div>
             Can you pull the design thread before Friday?
             <div className="wa-meta-line"><span className="time">10:40</span></div>
           </div>
@@ -349,7 +350,7 @@ function ExportPanel({ phase, percent }) {
       <div className="demo-xp-body">
         <div className="demo-xp-label">Active chat</div>
         <div className="demo-xp-chat">
-          <div className="demo-xp-avatar">{noChat ? '?' : 'D'}</div>
+          <div className="demo-xp-avatar">{noChat ? '?' : 'S'}</div>
           <div>
             <div className="demo-xp-chat-name">{noChat ? 'No chat open' : CHAT_NAME}</div>
             {!noChat && (
@@ -427,7 +428,7 @@ function FolderScreen({ reducedMotion }) {
 
   return (
     <div className="demo-folder">
-      <div className="demo-folder-path">{Icon.folder}<span>Downloads / design-team-export</span></div>
+      <div className="demo-folder-path">{Icon.folder}<span>Downloads / {ZIP_SLUG}</span></div>
       <div className={`demo-file-row${opening ? ' is-opening' : ''}`} data-cursor-target="file-index">
         <span className="demo-file-ico html">‹h›</span>index.html<span className="demo-file-size">312 KB</span>
       </div>
@@ -458,7 +459,7 @@ function ArchiveScreen({ reducedMotion }) {
 
         <div className="wa-row in" id="archive-original-msg">
           <div className={`wa-bubble${highlighted ? ' msg-highlight' : ''}`}>
-            <div className="wa-sender">Priya Nair</div>
+            <div className="wa-sender">Vishal</div>
             The export needs to keep <strong>reply threads</strong> intact
             <div className="wa-meta-line"><span className="time">10:38</span></div>
           </div>
@@ -466,15 +467,15 @@ function ArchiveScreen({ reducedMotion }) {
 
         <div className="wa-row out">
           <div className="wa-bubble" data-cursor-target="archive-reply">
-            <div className="wa-reply"><div className="r-name">Priya Nair</div><div className="r-text">The export needs to keep reply threads intact</div></div>
-            On it — exporting the whole channel now, check <span className="wa-mention">@Ravi Shah</span> too 🗂️
+            <div className="wa-reply"><div className="r-name">Vishal</div><div className="r-text">The export needs to keep reply threads intact</div></div>
+            On it — exporting the whole channel now, check <span className="wa-mention">@Ravi</span> too 🗂️
             <div className="wa-meta-line"><span className="time">10:42</span><span className="ticks">{Icon.ticks}</span></div>
           </div>
         </div>
 
         <div className="wa-row in">
           <div className="wa-bubble wa-sticker-wrap">
-            <div className="wa-sender">Ravi Shah</div>
+            <div className="wa-sender">Ravi</div>
             <div className="wa-sticker">🎉</div>
           </div>
         </div>
@@ -490,7 +491,7 @@ function ArchiveScreen({ reducedMotion }) {
 
         <div className="wa-row in">
           <div className="wa-bubble">
-            <div className="wa-sender">Priya Nair</div>
+            <div className="wa-sender">Vishal</div>
             <div className="wa-doc-card"><div className="icon">PDF</div><div><div className="name">brief_v3.pdf</div><div className="sub">2.1 MB</div></div></div>
             <div className="wa-meta-line"><span className="time">10:49</span></div>
           </div>
@@ -553,7 +554,7 @@ export default function DemoWalkthrough() {
         <div className="browser-chrome">
           <div className="browser-dots"><span></span><span></span><span></span></div>
           <div className="browser-url">
-            {showFolder ? 'Downloads' : showArchive ? 'file:///design-team-export/index.html' : 'web.whatsapp.com'}
+            {showFolder ? 'Downloads' : showArchive ? `file:///${ZIP_SLUG}/index.html` : 'web.whatsapp.com'}
           </div>
         </div>
         <div className="demo-viewport" ref={stageRef}>

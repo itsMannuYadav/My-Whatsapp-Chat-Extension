@@ -33,7 +33,7 @@ export default function HomePage() {
                 <div className="chat-day">Today</div>
                 <div className="bubble in">Can you pull the design thread before Friday?</div>
                 <div className="bubble out">
-                  <div className="quote">Priya: the export needs to keep reply threads intact</div>
+                  <div className="quote">Vishal: the export needs to keep reply threads intact</div>
                   On it — exporting the whole channel now 🗂️
                   <span className="tick">10:42 ✓✓</span>
                 </div>
@@ -43,9 +43,9 @@ export default function HomePage() {
                   <div className="ep-head">WA Rich Export<span className="ep-dot"></span></div>
                   <div className="ep-body">
                     <div className="ep-chat">
-                      <div className="ep-avatar">D</div>
+                      <div className="ep-avatar">S</div>
                       <div>
-                        <div className="ep-chat-name">Design Team</div>
+                        <div className="ep-chat-name">Sundarbans</div>
                         <div className="ep-chat-sub">~842 msgs loaded</div>
                       </div>
                     </div>

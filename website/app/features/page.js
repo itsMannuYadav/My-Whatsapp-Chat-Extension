@@ -98,8 +98,8 @@ export default function FeaturesPage() {
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
-                <div className="sender-label">Priya Nair</div>
-                <div className="bubble in">Looping in <span className="mention-chip">@Design Team</span> on this one</div>
+                <div className="sender-label">Vishal</div>
+                <div className="bubble in">Looping in <span className="mention-chip">@Sundarbans</span> on this one</div>
                 <div className="bubble in" style={{ marginTop: 6 }}>
                   <div className="fwd-label">↪ Forwarded</div>
                   Here&rsquo;s the finalized brand kit
@@ -117,7 +117,7 @@ export default function FeaturesPage() {
             <div className="feature-visual reveal">
               <div className="mini-chat">
                 <div className="alias-mock">
-                  <div className="alias-row"><span className="alias-from">Exported as &ldquo;Priya N.&rdquo;</span><span className="arrow">→</span><span className="alias-to">Priya (Design Lead)</span></div>
+                  <div className="alias-row"><span className="alias-from">Exported as &ldquo;Ojha ji&rdquo;</span><span className="arrow">→</span><span className="alias-to">Ojha ji (Uncle)</span></div>
                   <div className="alias-row"><span className="alias-from">Exported as &ldquo;+91 98••• •••2&rdquo;</span><span className="arrow">→</span><span className="alias-to">Delivery bot</span></div>
                 </div>
               </div>
