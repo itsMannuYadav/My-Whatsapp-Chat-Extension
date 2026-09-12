@@ -11,7 +11,7 @@
   <!-- header -->
   <rect x="0" y="0" width="900" height="70" rx="16" fill="url(#ephead)"/>
   <rect x="0" y="40" width="900" height="30" fill="#0a5d45"/>
-  <text x="32" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#f3fbf7">Design Team</text>
+  <text x="32" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#f3fbf7">Sundarbans</text>
   <rect x="228" y="18" width="52" height="18" rx="9" fill="#054640"/>
   <text x="254" y="31" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#25d366" text-anchor="middle">GROUP</text>
   <text x="32" y="56" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#cfe7dd">842 messages · exported 12 Sep 2026</text>
@@ -22,16 +22,16 @@
     <text x="450" y="0" font-size="11" fill="#7c8c82" text-anchor="middle" letter-spacing="1">TODAY</text>
 
     <!-- incoming with sender name -->
-    <text x="32" y="26" font-size="11.5" font-weight="700" fill="#0e7a5b">Priya Nair</text>
+    <text x="32" y="26" font-size="11.5" font-weight="700" fill="#0e7a5b">Vishal</text>
     <rect x="32" y="34" width="330" height="46" rx="10" fill="#ffffff" stroke="#cdd8cb"/>
-    <text x="48" y="63" font-size="13.5" fill="#101d17">Looping in @Design Team on the export</text>
+    <text x="48" y="63" font-size="13.5" fill="#101d17">Looping in @Sundarbans on the export</text>
 
     <!-- outgoing reply w/ quote -->
     <g transform="translate(538,34)">
       <rect x="0" y="0" width="330" height="86" rx="10" fill="#dcefe5" stroke="#9fd2bc"/>
       <rect x="10" y="10" width="4" height="30" fill="#b8863a"/>
-      <text x="20" y="24" font-size="11" fill="#4a5a51">Priya Nair</text>
-      <text x="20" y="38" font-size="11" fill="#4a5a51">Looping in @Design Team on the export</text>
+      <text x="20" y="24" font-size="11" fill="#4a5a51">Vishal</text>
+      <text x="20" y="38" font-size="11" fill="#4a5a51">Looping in @Sundarbans on the export</text>
       <text x="18" y="62" font-size="13.5" fill="#101d17">On it — exporting the whole channel now 🗂️</text>
       <text x="312" y="78" font-size="10.5" fill="#7c8c82" text-anchor="end">10:42 ✓✓</text>
     </g>
@@ -74,10 +74,10 @@
       <text x="20" y="48" font-size="12" fill="#7c8c82">Rename a contact for your own reading — the archive file keeps its original names.</text>
 
       <rect x="20" y="64" width="380" height="38" rx="8" fill="#eef2ee" stroke="#cdd8cb"/>
-      <text x="34" y="87" font-size="12" fill="#4a5a51">Exported as "Priya N."</text>
+      <text x="34" y="87" font-size="12" fill="#4a5a51">Exported as "Ojha ji"</text>
       <text x="200" y="87" font-size="14" fill="#b8863a">→</text>
       <rect x="222" y="72" width="160" height="22" rx="5" fill="#ffffff" stroke="#cdd8cb"/>
-      <text x="232" y="87" font-size="12" font-weight="700" fill="#101d17">Priya (Design Lead)</text>
+      <text x="232" y="87" font-size="12" font-weight="700" fill="#101d17">Ojha ji (Uncle)</text>
 
       <rect x="436" y="64" width="380" height="38" rx="8" fill="#eef2ee" stroke="#cdd8cb"/>
       <text x="450" y="87" font-size="12" fill="#4a5a51">Exported as "+91 98••• •••2"</text>

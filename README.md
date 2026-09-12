@@ -187,7 +187,9 @@ The full policy — including how the small set of local UI preferences (panel p
 
 ## Website
 
-A full marketing site — home, feature tour, install guide, FAQ, and the privacy policy — lives in this repo under [`website/`](website/). It's a Next.js (App Router) app: shared header/nav/footer as real components, one global CSS file for the whole design system, no other runtime dependencies. See [`website/README.md`](website/README.md) for local dev commands.
+A full marketing site — home, feature tour, an animated step-by-step demo, install guide, FAQ, and the privacy policy — lives in this repo under [`website/`](website/). It's a Next.js (App Router) app: shared header/nav/footer as real components, one global CSS file for the whole design system, no other runtime dependencies. See [`website/README.md`](website/README.md) for local dev commands.
+
+The `/demo` page is worth a look on its own: a replayable, pixel-matched recreation of the whole export flow (WhatsApp Web, the real floating panel, the download, the archive) built entirely in CSS/SVG — no video file, no recording.
 
 ```
 website/
@@ -196,6 +198,7 @@ website/
 │   ├── globals.css        # the whole design system — tokens, components
 │   ├── page.js             # home
 │   ├── features/page.js
+│   ├── demo/page.js         # animated, replayable walkthrough of the export flow
 │   ├── install/page.js
 │   ├── faq/page.js
 │   ├── privacy/page.js       # ← the privacy policy URL the stores ask for
@@ -204,7 +207,8 @@ website/
 ├── components/
 │   ├── Header.js         # nav + mobile menu ('use client')
 │   ├── Footer.js
-│   └── ScrollReveal.js    # fade-in on scroll for .reveal elements
+│   ├── ScrollReveal.js    # fade-in on scroll for .reveal elements
+│   └── DemoWalkthrough.js # the /demo page's animated sequence
 └── package.json
 ```
 
