@@ -360,7 +360,7 @@
       '<h2>Recognize people</h2>' +
       '<p class="alias-help">Names above are how the person who exported this chat saved contacts. ' +
       'Match a number (when available) and rename for your reading. ' +
-      'Changes apply only in this open page — the archive file keeps the original names.</p>' +
+      'Changes apply only in this open page - the archive file keeps the original names.</p>' +
       '<div class="alias-list">' +
       rows +
       '</div>' +
@@ -464,7 +464,7 @@
       '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
       '<title>' +
       esc(title) +
-      ' — WhatsApp Export</title>\n' +
+      ' - WhatsApp Export</title>\n' +
       '<link rel="stylesheet" href="styles.css">\n' +
       '</head>\n<body>\n' +
       '<div class="header"><div><h1>' +

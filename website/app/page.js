@@ -10,7 +10,7 @@ export default function HomePage() {
           <div className="hero-copy">
             <span className="eyebrow">Chrome &amp; Edge extension · Manifest V3</span>
             <h1>Every conversation, kept exactly as WhatsApp showed it to you.</h1>
-            <p className="lede">WA Rich Export reads the chat you currently have open on WhatsApp Web and writes it to an offline archive on your disk — replies quoted, stickers and photos inline, documents and voice notes attached, group senders labelled. Nothing is uploaded anywhere.</p>
+            <p className="lede">WA Rich Export reads the chat you currently have open on WhatsApp Web and writes it to an offline archive on your disk - replies quoted, stickers and photos inline, documents and voice notes attached, group senders labelled. Nothing is uploaded anywhere.</p>
             <div className="hero-ctas">
               <Link className="btn btn-primary" href="/install">Get the extension</Link>
               <a className="btn btn-ghost" href="#how-it-works">See how it works</a>
@@ -34,7 +34,7 @@ export default function HomePage() {
                 <div className="bubble in">Can you pull the design thread before Friday?</div>
                 <div className="bubble out">
                   <div className="quote">Vishal: the export needs to keep reply threads intact</div>
-                  On it — exporting the whole channel now 🗂️
+                  On it - exporting the whole channel now 🗂️
                   <span className="tick">10:42 ✓✓</span>
                 </div>
                 <div className="bubble in">Perfect, ping me the zip</div>
@@ -76,7 +76,7 @@ export default function HomePage() {
             <article className="card reveal">
               <span className="card-tag">Formatting</span>
               <h3>Bold, italic, code, links</h3>
-              <p>WhatsApp&rsquo;s own markdown — *bold*, _italic_, ~strike~, `code` — plus auto-linked URLs and emails, rendered as real HTML, not asterisks.</p>
+              <p>WhatsApp&rsquo;s own markdown - *bold*, _italic_, ~strike~, `code` - plus auto-linked URLs and emails, rendered as real HTML, not asterisks.</p>
             </article>
             <article className="card reveal">
               <span className="card-tag">Replies</span>
@@ -86,12 +86,12 @@ export default function HomePage() {
             <article className="card reveal">
               <span className="card-tag">Media</span>
               <h3>Stickers, photos, docs, voice notes</h3>
-              <p>Downloaded through WhatsApp&rsquo;s own media pipeline and saved next to the archive — images inline, documents as cards, voice notes as playable audio.</p>
+              <p>Downloaded through WhatsApp&rsquo;s own media pipeline and saved next to the archive - images inline, documents as cards, voice notes as playable audio.</p>
             </article>
             <article className="card reveal">
               <span className="card-tag">Groups</span>
               <h3>Senders, mentions, and forwards</h3>
-              <p>Group exports label who sent what, render @mentions as chips, and flag forwarded messages — same as the WhatsApp Web UI.</p>
+              <p>Group exports label who sent what, render @mentions as chips, and flag forwarded messages - same as the WhatsApp Web UI.</p>
             </article>
             <article className="card reveal">
               <span className="card-tag">Theme sync</span>
@@ -101,7 +101,7 @@ export default function HomePage() {
             <article className="card reveal">
               <span className="card-tag">History depth</span>
               <h3>You choose how far back</h3>
-              <p>Last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this WhatsApp Web session has already synced — your call, every export.</p>
+              <p>Last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this WhatsApp Web session has already synced - your call, every export.</p>
             </article>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
               <div className="ledger-num">01</div>
               <div>
                 <h3>Read from WhatsApp&rsquo;s own Store</h3>
-                <p>A script runs inside the WhatsApp Web page itself and reads the open chat straight out of WhatsApp&rsquo;s internal <code>WAWebCollections</code> module — the same decrypted data the page already has in memory.</p>
+                <p>A script runs inside the WhatsApp Web page itself and reads the open chat straight out of WhatsApp&rsquo;s internal <code>WAWebCollections</code> module - the same decrypted data the page already has in memory.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
@@ -133,7 +133,7 @@ export default function HomePage() {
               <div className="ledger-num">03</div>
               <div>
                 <h3>Fetch the media</h3>
-                <p>Stickers, images, documents and voice notes are pulled through WhatsApp&rsquo;s own <code>downloadMedia</code> path — best-effort, since only cached, decryptable media can be recovered.</p>
+                <p>Stickers, images, documents and voice notes are pulled through WhatsApp&rsquo;s own <code>downloadMedia</code> path - best-effort, since only cached, decryptable media can be recovered.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
@@ -153,7 +153,7 @@ export default function HomePage() {
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
             <div>
               <h3>Nothing you export ever leaves your machine.</h3>
-              <p>The extension asks for exactly one host permission — <code className="inline-code">web.whatsapp.com</code> — and makes no network requests of its own. Read the full <Link href="/privacy">privacy policy</Link>.</p>
+              <p>The extension asks for exactly one host permission - <code className="inline-code">web.whatsapp.com</code> - and makes no network requests of its own. Read the full <Link href="/privacy">privacy policy</Link>.</p>
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function HomePage() {
       <section id="cta">
         <div className="container center" style={{ maxWidth: 640, display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
           <h2 className="reveal">Your chats are already on your screen. Keep them properly.</h2>
-          <p className="reveal lede">Load it in under a minute — no store account needed while it&rsquo;s in review.</p>
+          <p className="reveal lede">Load it in under a minute - no store account needed while it&rsquo;s in review.</p>
           <div className="hero-ctas reveal">
             <Link className="btn btn-primary" href="/install">Read the install guide</Link>
             <Link className="btn btn-ghost" href="/features">Explore every feature</Link>

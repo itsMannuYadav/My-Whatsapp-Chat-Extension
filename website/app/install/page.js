@@ -23,7 +23,7 @@ export default function InstallPage() {
               <div className="ledger-num">01</div>
               <div>
                 <h3>Get the extension folder</h3>
-                <p>Download or clone the project so you have a folder that contains <code>manifest.json</code> at its root — not nested inside another folder.</p>
+                <p>Download or clone the project so you have a folder that contains <code>manifest.json</code> at its root - not nested inside another folder.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
@@ -44,7 +44,7 @@ export default function InstallPage() {
               <div className="ledger-num">04</div>
               <div>
                 <h3>Click &ldquo;Load unpacked&rdquo;</h3>
-                <p>Select the folder from step 1 — the one containing <code>manifest.json</code>. The extension appears in your toolbar immediately; no restart needed.</p>
+                <p>Select the folder from step 1 - the one containing <code>manifest.json</code>. The extension appears in your toolbar immediately; no restart needed.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
@@ -101,7 +101,7 @@ export default function InstallPage() {
           <div className="section-head reveal">
             <span className="eyebrow">Coming to the stores</span>
             <h2>Chrome Web Store &amp; Edge Add-ons</h2>
-            <p>Once review clears, install becomes a single click from either official store — no developer mode required. This page will switch straight over to those links.</p>
+            <p>Once review clears, install becomes a single click from either official store - no developer mode required. This page will switch straight over to those links.</p>
           </div>
           <div className="card-grid">
             <article className="card reveal">

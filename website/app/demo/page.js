@@ -8,13 +8,13 @@ export const metadata = {
 };
 
 const STEPS = [
-  { title: 'Open the chat you want to keep', body: 'The export panel is already floating over WhatsApp Web the moment the page loads — it just has no chat to work with yet.' },
+  { title: 'Open the chat you want to keep', body: 'The export panel is already floating over WhatsApp Web the moment the page loads - it just has no chat to work with yet.' },
   { title: 'No second click needed', body: 'The panel polls the page itself: chat name, group badge and message count fill in on their own the instant a chat is open.' },
-  { title: 'Choose how far back, then export', body: 'Last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this session has already synced — a real dropdown, then Export chat.' },
+  { title: 'Choose how far back, then export', body: 'Last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this session has already synced - a real dropdown, then Export chat.' },
   { title: 'It reads, structures, fetches media, and packages', body: 'The extension reads the open chat out of WhatsApp’s own in-page Store, normalizes it into one timeline, pulls cached media, then writes and zips the archive.' },
   { title: 'Your browser downloads the archive', body: 'The finished .zip comes down through the browser’s own download flow, the same one every other download uses, the moment the panel reports success.' },
-  { title: 'Open the folder it saved to', body: 'Unzipped, it’s four plain files: index.html, styles.css, chat.json and a media/ folder — nothing proprietary and nothing that needs the extension again.' },
-  { title: 'Everything comes back the way it looked', body: 'Text formatting, a reply that jumps to its source, sender labels, a mention, a forward, a sticker, a photo, a document and a voice note — all rendered offline.' },
+  { title: 'Open the folder it saved to', body: 'Unzipped, it’s four plain files: index.html, styles.css, chat.json and a media/ folder - nothing proprietary and nothing that needs the extension again.' },
+  { title: 'Everything comes back the way it looked', body: 'Text formatting, a reply that jumps to its source, sender labels, a mention, a forward, a sticker, a photo, a document and a voice note - all rendered offline.' },
 ];
 
 export default function DemoPage() {
@@ -25,7 +25,7 @@ export default function DemoPage() {
         <div className="container page-intro">
           <span className="eyebrow reveal">See it in action</span>
           <h1 className="reveal h1-page">Watch an export happen, start to finish.</h1>
-          <p className="reveal lede">A scripted, pixel-matched walkthrough of the real sequence — the export panel&rsquo;s own colors and copy, WhatsApp Web&rsquo;s own layout, and the archive&rsquo;s own styling. Use the controls to pause, step back, or jump straight to any stage.</p>
+          <p className="reveal lede">A scripted, pixel-matched walkthrough of the real sequence - the export panel&rsquo;s own colors and copy, WhatsApp Web&rsquo;s own layout, and the archive&rsquo;s own styling. Use the controls to pause, step back, or jump straight to any stage.</p>
         </div>
       </section>
 
@@ -40,7 +40,7 @@ export default function DemoPage() {
           <div className="section-head reveal">
             <span className="eyebrow">Same seven steps, in writing</span>
             <h2>If you&rsquo;d rather read it than watch it</h2>
-            <p>Nothing in the animation above is invented for the demo — this is the same order of operations the extension itself follows every time.</p>
+            <p>Nothing in the animation above is invented for the demo - this is the same order of operations the extension itself follows every time.</p>
           </div>
           <div className="ledger">
             {STEPS.map((step, i) => (

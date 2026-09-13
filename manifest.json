@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "WhatsApp Rich Chat Export",
   "version": "1.0.9",
-  "description": "Export any WhatsApp Web chat into an offline, WhatsApp-styled HTML archive — replies, stickers, photos, docs & voice notes kept.",
+  "description": "Export any WhatsApp Web chat into an offline, WhatsApp-styled HTML archive - replies, stickers, photos, docs & voice notes kept.",
   "host_permissions": ["https://web.whatsapp.com/*"],
   "background": {
     "service_worker": "src/background/service_worker.js"

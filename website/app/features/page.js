@@ -14,7 +14,7 @@ export default function FeaturesPage() {
         <div className="container page-intro">
           <span className="eyebrow reveal">Everything the archive keeps</span>
           <h1 className="reveal h1-page">A tour of what shows up in your export.</h1>
-          <p className="reveal lede">Each of these is a real part of the same <code className="inline-code">index.html</code> the extension writes — not a promise, a rendering.</p>
+          <p className="reveal lede">Each of these is a real part of the same <code className="inline-code">index.html</code> the extension writes - not a promise, a rendering.</p>
         </div>
       </section>
 
@@ -33,7 +33,7 @@ export default function FeaturesPage() {
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
-                <div className="bubble in">Check the <strong>final</strong> brief — it&rsquo;s in <code className="inline-code">brief_v3.pdf</code></div>
+                <div className="bubble in">Check the <strong>final</strong> brief - it&rsquo;s in <code className="inline-code">brief_v3.pdf</code></div>
                 <div className="bubble out">Got it, reviewing <em>now</em>. Ping me at ops@studio.example if it&rsquo;s urgent<span className="tick">10:12 ✓✓</span></div>
                 <div className="bubble in emoji">🎉</div>
               </div>
@@ -44,7 +44,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">Replies</span>
               <h2>Quoted replies that jump to their source</h2>
-              <p>Every reply keeps its quote bar exactly as WhatsApp rendered it. Click a quote inside the exported archive and the page scrolls straight to the original message — even if it&rsquo;s thousands of lines up — and briefly highlights it.</p>
+              <p>Every reply keeps its quote bar exactly as WhatsApp rendered it. Click a quote inside the exported archive and the page scrolls straight to the original message - even if it&rsquo;s thousands of lines up - and briefly highlights it.</p>
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
@@ -62,7 +62,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">Media</span>
               <h2>Stickers, photos, documents and voice notes</h2>
-              <p>Media is downloaded through WhatsApp&rsquo;s own decrypt path and saved into a <code className="inline-code">media/</code> folder next to the archive — images sit inline, documents become downloadable cards, voice notes become playable audio.</p>
+              <p>Media is downloaded through WhatsApp&rsquo;s own decrypt path and saved into a <code className="inline-code">media/</code> folder next to the archive - images sit inline, documents become downloadable cards, voice notes become playable audio.</p>
               <ul>
                 <li>Video keeps its place in the conversation as a labelled placeholder for now</li>
                 <li>Only media already cached by this WhatsApp Web session can be recovered</li>
@@ -94,7 +94,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">Groups</span>
               <h2>Senders, mentions and forwards, labelled</h2>
-              <p>Group exports show who sent each message, render <span className="mention-chip">@name</span> mentions as chips instead of raw phone IDs, and flag forwarded messages — matching what you&rsquo;d see live in WhatsApp Web.</p>
+              <p>Group exports show who sent each message, render <span className="mention-chip">@name</span> mentions as chips instead of raw phone IDs, and flag forwarded messages - matching what you&rsquo;d see live in WhatsApp Web.</p>
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
@@ -112,7 +112,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">Contact aliasing</span>
               <h2>Recognize people, without editing the file</h2>
-              <p>Every archive ends with a small &ldquo;Recognize people&rdquo; panel. Match a saved contact to a phone number and rename it for your own reading — the change applies only in your open browser tab. The archive file on disk always keeps its original names.</p>
+              <p>Every archive ends with a small &ldquo;Recognize people&rdquo; panel. Match a saved contact to a phone number and rename it for your own reading - the change applies only in your open browser tab. The archive file on disk always keeps its original names.</p>
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
@@ -128,7 +128,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">Theme sync</span>
               <h2>Follows WhatsApp Web&rsquo;s own theme, live</h2>
-              <p>Toggle WhatsApp Web between light and dark and the export panel switches with it immediately — no separate setting to hunt for, no jarring mismatch floating over your chat.</p>
+              <p>Toggle WhatsApp Web between light and dark and the export panel switches with it immediately - no separate setting to hunt for, no jarring mismatch floating over your chat.</p>
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
@@ -144,7 +144,7 @@ export default function FeaturesPage() {
             <div className="feature-copy reveal">
               <span className="card-tag">History depth</span>
               <h2>You decide how far back it goes</h2>
-              <p>Pick the last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this WhatsApp Web session has already synced. Only messages already loaded here are ever available — older history that lives solely on your phone can&rsquo;t be reached.</p>
+              <p>Pick the last 1,000 messages for a quick save, 5,000 for a fuller thread, or everything this WhatsApp Web session has already synced. Only messages already loaded here are ever available - older history that lives solely on your phone can&rsquo;t be reached.</p>
             </div>
             <div className="feature-visual reveal">
               <div className="mini-chat">
@@ -164,7 +164,7 @@ export default function FeaturesPage() {
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">Said plainly</span>
-            <h2>What it doesn&rsquo;t do — yet</h2>
+            <h2>What it doesn&rsquo;t do - yet</h2>
             <p>A short, honest list, so there are no surprises after you export.</p>
           </div>
           <div className="card-grid">

@@ -11,7 +11,7 @@ const ITEMS = [
   {
     q: 'Does this work on group chats, not just DMs?',
     a: (
-      <>Yes. Group exports label each message with its sender&rsquo;s name, render @mentions as chips, and flag forwarded messages — all of that is DM-only content otherwise, since a one-to-one chat has no sender labels to show.</>
+      <>Yes. Group exports label each message with its sender&rsquo;s name, render @mentions as chips, and flag forwarded messages - all of that is DM-only content otherwise, since a one-to-one chat has no sender labels to show.</>
     ),
   },
   {
@@ -23,7 +23,7 @@ const ITEMS = [
   {
     q: 'Does WA Rich Export send my messages anywhere?',
     a: (
-      <>No. The extension makes no network requests of its own. It only reads data already decrypted in your browser&rsquo;s memory and calls WhatsApp Web&rsquo;s own media-download functions — the same ones the page already uses when you view an image or play a voice note yourself.</>
+      <>No. The extension makes no network requests of its own. It only reads data already decrypted in your browser&rsquo;s memory and calls WhatsApp Web&rsquo;s own media-download functions - the same ones the page already uses when you view an image or play a voice note yourself.</>
     ),
   },
   {
@@ -35,7 +35,7 @@ const ITEMS = [
   {
     q: 'How far back in history can I go?',
     a: (
-      <>Only as far as WhatsApp Web has already synced to this session — older messages that live solely on your phone aren&rsquo;t reachable from the browser tab. Within that, you choose the last 1,000 messages, the last 5,000, or everything currently synced.</>
+      <>Only as far as WhatsApp Web has already synced to this session - older messages that live solely on your phone aren&rsquo;t reachable from the browser tab. Within that, you choose the last 1,000 messages, the last 5,000, or everything currently synced.</>
     ),
   },
   {
@@ -47,23 +47,23 @@ const ITEMS = [
   {
     q: 'Where does the exported file go?',
     a: (
-      <>Wherever your browser normally saves downloads. The export finishes as a single <code className="inline-code">.zip</code> — unzip it and open <code className="inline-code">index.html</code> in any browser, any time, with no internet connection or extension required to read it later.</>
+      <>Wherever your browser normally saves downloads. The export finishes as a single <code className="inline-code">.zip</code> - unzip it and open <code className="inline-code">index.html</code> in any browser, any time, with no internet connection or extension required to read it later.</>
     ),
   },
   {
     q: 'Can I rename people in an exported chat?',
     a: (
-      <>Yes — every archive ends with a &ldquo;Recognize people&rdquo; panel where you can rename a contact for your own reading. It only changes what you see in that open browser tab; the archive file on disk keeps its original names, and a page refresh reverts to them.</>
+      <>Yes - every archive ends with a &ldquo;Recognize people&rdquo; panel where you can rename a contact for your own reading. It only changes what you see in that open browser tab; the archive file on disk keeps its original names, and a page refresh reverts to them.</>
     ),
   },
   {
     q: 'Do I need to keep the tab open while it exports?',
     a: (
-      <>Yes. The export runs inside your live WhatsApp Web tab, so keep it open and on the same chat until the download finishes — closing it or navigating away mid-export cancels the job.</>
+      <>Yes. The export runs inside your live WhatsApp Web tab, so keep it open and on the same chat until the download finishes - closing it or navigating away mid-export cancels the job.</>
     ),
   },
   {
-    q: 'The panel didn’t show up — what now?',
+    q: 'The panel didn’t show up - what now?',
     a: (
       <>Confirm the extension is enabled on its extensions page, then reload the <code className="inline-code">web.whatsapp.com</code> tab. The panel only injects on that domain and appears once a chat is open.</>
     ),

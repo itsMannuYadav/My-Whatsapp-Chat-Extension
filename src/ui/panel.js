@@ -142,6 +142,116 @@
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
+  // Keep draggable elements clear of WhatsApp's own fixed UI: the left icon
+  // rail and the bottom strip where call-control widgets float. Otherwise a
+  // dragged (and persisted) position can park an element where it looks
+  // stuck behind/under WhatsApp's native elements.
+  const SAFE_LEFT = 72;
+  const SAFE_BOTTOM = 96;
+  const SAFE_EDGE = 8;
+
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+
+  // Generic free-drag with position persistence, shared by the panel and
+  // the minimized FAB so both can be moved anywhere on screen.
+  function makeDraggable(node, handle, options) {
+    const opts = options || {};
+    const storageKey = opts.storageKey;
+    const defaultW = opts.defaultW || 100;
+    const defaultH = opts.defaultH || 40;
+    const skipSelector = opts.skipSelector;
+    const onClick = opts.onClick;
+    const DRAG_THRESHOLD = 4;
+
+    let dragging = false;
+    let moved = false;
+    let startX = 0;
+    let startY = 0;
+    let startLeft = 0;
+    let startTop = 0;
+
+    function applyPosition(left, top) {
+      const w = node.offsetWidth || defaultW;
+      const h = node.offsetHeight || defaultH;
+      const maxLeft = window.innerWidth - w - SAFE_EDGE;
+      const maxTop = window.innerHeight - h - SAFE_BOTTOM;
+      const clampedLeft = clamp(left, SAFE_LEFT, Math.max(SAFE_LEFT, maxLeft));
+      const clampedTop = clamp(top, SAFE_EDGE, Math.max(SAFE_EDGE, maxTop));
+      node.style.left = clampedLeft + 'px';
+      node.style.top = clampedTop + 'px';
+      node.style.right = 'auto';
+      node.style.bottom = 'auto';
+      return { left: clampedLeft, top: clampedTop };
+    }
+
+    if (opts.initialPos && typeof opts.initialPos.left === 'number') {
+      requestAnimationFrame(() => applyPosition(opts.initialPos.left, opts.initialPos.top));
+    }
+
+    handle.addEventListener('pointerdown', (e) => {
+      if (skipSelector && e.target.closest(skipSelector)) return;
+      dragging = true;
+      moved = false;
+      const rect = node.getBoundingClientRect();
+      startLeft = rect.left;
+      startTop = rect.top;
+      startX = e.clientX;
+      startY = e.clientY;
+      handle.setPointerCapture(e.pointerId);
+    });
+
+    handle.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (!moved && (Math.abs(dx) > DRAG_THRESHOLD || Math.abs(dy) > DRAG_THRESHOLD)) {
+        moved = true;
+        node.classList.add('wa-xp-dragging');
+      }
+      if (moved) applyPosition(startLeft + dx, startTop + dy);
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      node.classList.remove('wa-xp-dragging');
+      if (moved && storageKey) {
+        const rect = node.getBoundingClientRect();
+        saveUiState({ [storageKey]: { left: rect.left, top: rect.top } });
+      }
+      try {
+        handle.releasePointerCapture(e.pointerId);
+      } catch (_) {
+        /* no-op */
+      }
+    }
+
+    handle.addEventListener('pointerup', endDrag);
+    handle.addEventListener('pointercancel', endDrag);
+
+    if (onClick) {
+      handle.addEventListener('click', (e) => {
+        if (moved) {
+          e.preventDefault();
+          e.stopPropagation();
+          moved = false;
+          return;
+        }
+        onClick(e);
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (!node.style.left) return;
+      const rect = node.getBoundingClientRect();
+      applyPosition(rect.left, rect.top);
+    });
+
+    return { applyPosition };
+  }
+
   function createPanel() {
     if (document.getElementById('wa-rich-export-panel')) return;
 
@@ -292,7 +402,6 @@
     const fab = el('button');
     fab.id = 'wa-rich-export-fab';
     fab.type = 'button';
-    fab.style.position = 'relative';
     const fabIcon = setSvg(el('span', 'wa-fab-icon'), ICONS.download);
     const fabLabel = el('span', 'wa-fab-label', 'Export');
     const fabBadge = el('span', 'wa-fab-badge');
@@ -320,6 +429,7 @@
     }
 
     // ---- Show / hide ----
+    let repositionPanel = null;
     function hidePanel() {
       panel.classList.add('hidden-panel');
       fab.style.display = 'flex';
@@ -329,16 +439,22 @@
       panel.classList.remove('hidden-panel');
       fab.style.display = 'none';
       saveUiState({ hidden: false });
+      // Re-validate a previously dragged position against the current
+      // viewport/layout so restoring never drops the panel somewhere it
+      // now overlaps WhatsApp's own UI (e.g. after a window resize or a
+      // call widget appearing while the panel was minimized).
+      if (repositionPanel && panel.style.left) {
+        requestAnimationFrame(() => {
+          const rect = panel.getBoundingClientRect();
+          repositionPanel(rect.left, rect.top);
+        });
+      }
     }
 
     minBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       hidePanel();
-    });
-    fab.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPanel();
     });
     head.addEventListener('dblclick', hidePanel);
 
@@ -355,75 +471,26 @@
     }
 
     // ---- Draggable header (position persisted) ----
-    (function enableDrag() {
-      let dragging = false;
-      let startX = 0;
-      let startY = 0;
-      let startLeft = 0;
-      let startTop = 0;
+    const panelDrag = makeDraggable(panel, head, {
+      storageKey: 'pos',
+      defaultW: 336,
+      defaultH: 200,
+      skipSelector: '.wa-xp-iconbtn',
+      initialPos: uiState.pos,
+    });
+    repositionPanel = panelDrag.applyPosition;
 
-      function clamp(val, min, max) {
-        return Math.max(min, Math.min(max, val));
-      }
-
-      function applyPosition(left, top) {
-        const w = panel.offsetWidth || 336;
-        const h = panel.offsetHeight || 200;
-        const maxLeft = window.innerWidth - w - 8;
-        const maxTop = window.innerHeight - h - 8;
-        const clampedLeft = clamp(left, 8, Math.max(8, maxLeft));
-        const clampedTop = clamp(top, 8, Math.max(8, maxTop));
-        panel.style.left = clampedLeft + 'px';
-        panel.style.top = clampedTop + 'px';
-        panel.style.right = 'auto';
-        return { left: clampedLeft, top: clampedTop };
-      }
-
-      if (uiState.pos && typeof uiState.pos.left === 'number') {
-        requestAnimationFrame(() => applyPosition(uiState.pos.left, uiState.pos.top));
-      }
-
-      head.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('.wa-xp-iconbtn')) return;
-        dragging = true;
-        panel.classList.add('wa-xp-dragging');
-        const rect = panel.getBoundingClientRect();
-        startLeft = rect.left;
-        startTop = rect.top;
-        startX = e.clientX;
-        startY = e.clientY;
-        head.setPointerCapture(e.pointerId);
-      });
-
-      head.addEventListener('pointermove', (e) => {
-        if (!dragging) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        applyPosition(startLeft + dx, startTop + dy);
-      });
-
-      function endDrag(e) {
-        if (!dragging) return;
-        dragging = false;
-        panel.classList.remove('wa-xp-dragging');
-        const rect = panel.getBoundingClientRect();
-        saveUiState({ pos: { left: rect.left, top: rect.top } });
-        try {
-          head.releasePointerCapture(e.pointerId);
-        } catch (_) {
-          /* no-op */
-        }
-      }
-
-      head.addEventListener('pointerup', endDrag);
-      head.addEventListener('pointercancel', endDrag);
-
-      window.addEventListener('resize', () => {
-        if (!panel.style.left) return;
-        const rect = panel.getBoundingClientRect();
-        applyPosition(rect.left, rect.top);
-      });
-    })();
+    // ---- Draggable FAB (position persisted independently of the panel) ----
+    makeDraggable(fab, fab, {
+      storageKey: 'fabPos',
+      defaultW: 140,
+      defaultH: 52,
+      initialPos: uiState.fabPos,
+      onClick: (e) => {
+        e.preventDefault();
+        showPanel();
+      },
+    });
 
     function setBar(pct2, isError) {
       bar.style.width = Math.max(0, Math.min(100, pct2)) + '%';

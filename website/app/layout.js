@@ -28,10 +28,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: {
     default: 'WA Rich Export',
-    template: '%s — WA Rich Export',
+    template: '%s - WA Rich Export',
   },
   description:
-    'A Chrome & Edge extension that exports your open WhatsApp Web chat — replies, stickers, images, documents and voice notes — into an offline, WhatsApp-styled archive. No server, no upload.',
+    'A Chrome & Edge extension that exports your open WhatsApp Web chat - replies, stickers, images, documents and voice notes - into an offline, WhatsApp-styled archive. No server, no upload.',
 };
 
 export default function RootLayout({ children }) {

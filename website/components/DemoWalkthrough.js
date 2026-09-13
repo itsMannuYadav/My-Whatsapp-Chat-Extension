@@ -42,7 +42,7 @@ const PHASES = [
     id: 'browse',
     label: '1. Open the chat',
     title: 'Open the chat you want to keep',
-    body: 'The panel is already sitting there the moment WhatsApp Web loads — it just doesn’t have a chat to work with yet.',
+    body: 'The panel is already sitting there the moment WhatsApp Web loads - it just doesn’t have a chat to work with yet.',
     duration: 4000,
     cursorPath: [
       { t: 1000, target: 'row-sundarbans' },
@@ -60,7 +60,7 @@ const PHASES = [
     id: 'export',
     label: '3. Pick a depth',
     title: 'Choose how far back, then export',
-    body: 'Last 1,000 for a quick save, 5,000 for a fuller thread, or everything this session has synced — a real <select>, then the Export chat button.',
+    body: 'Last 1,000 for a quick save, 5,000 for a fuller thread, or everything this session has synced - a real <select>, then the Export chat button.',
     duration: 4600,
     cursorPath: [
       { t: 900, target: 'xp-select' },
@@ -73,21 +73,21 @@ const PHASES = [
     id: 'processing',
     label: '4. It processes',
     title: 'Load, structure, fetch media, package',
-    body: 'Straight out of WhatsApp’s own in-page Store — the exact status text and step order from the extension itself.',
+    body: 'Straight out of WhatsApp’s own in-page Store - the exact status text and step order from the extension itself.',
     duration: 6200,
   },
   {
     id: 'download',
     label: '5. It downloads',
     title: 'Saved through the normal browser download',
-    body: 'The panel reports success at the same moment the .zip lands in Downloads — no upload, no server in between.',
+    body: 'The panel reports success at the same moment the .zip lands in Downloads - no upload, no server in between.',
     duration: 3400,
   },
   {
     id: 'folder',
     label: '6. Open the folder',
     title: 'Open the folder it saved to',
-    body: 'Unzipped, it’s four plain files — index.html, styles.css, chat.json and a media/ folder.',
+    body: 'Unzipped, it’s four plain files - index.html, styles.css, chat.json and a media/ folder.',
     duration: 4200,
     cursorPath: [
       { t: 1200, target: 'file-index' },
@@ -99,7 +99,7 @@ const PHASES = [
     id: 'result',
     label: '7. The result',
     title: 'Everything comes back the way it looked',
-    body: 'Text formatting, a reply that jumps to its source, a sender label, a mention, a forward, a sticker, a photo, a document and a voice note — all offline.',
+    body: 'Text formatting, a reply that jumps to its source, a sender label, a mention, a forward, a sticker, a photo, a document and a voice note - all offline.',
     duration: 6400,
     cursorPath: [{ t: 2600, target: 'archive-reply', click: true }],
   },
@@ -262,7 +262,7 @@ function Sidebar({ chatOpen }) {
           <div className="wa-chat-avatar" style={{ background: 'linear-gradient(135deg,#00a884,#008069)' }}>S</div>
           <div className="wa-chat-meta">
             <div className="wa-chat-line1"><span className="wa-chat-name">{CHAT_NAME}</span><span className="wa-chat-time">10:42</span></div>
-            <div className="wa-chat-line2"><span className="wa-chat-snip">On it — exporting now 🗂️</span><span className="wa-unread-badge">3</span></div>
+            <div className="wa-chat-line2"><span className="wa-chat-snip">On it - exporting now 🗂️</span><span className="wa-unread-badge">3</span></div>
           </div>
         </div>
         <div className="wa-chat-row">
@@ -357,7 +357,7 @@ function ChatMain() {
         </div>
         <div className="wa-row out">
           <div className="wa-bubble">
-            On it — exporting the whole channel now 🗂️
+            On it - exporting the whole channel now 🗂️
             <div className="wa-meta-line"><span className="time">10:42</span><span className="ticks">{Icon.ticks}</span></div>
           </div>
         </div>
@@ -453,7 +453,7 @@ function DownloadShelf({ percent }) {
         <div className={`demo-download-ring${done ? ' is-done' : ''}`} style={{ '--p': percent }}></div>
         <div>
           <div className="demo-download-name">{ZIP_NAME}</div>
-          <div className="demo-download-sub">{done ? '6.8 MB — saved to Downloads' : '6.8 MB'}</div>
+          <div className="demo-download-sub">{done ? '6.8 MB - saved to Downloads' : '6.8 MB'}</div>
         </div>
       </div>
     </div>
@@ -510,7 +510,7 @@ function ArchiveScreen({ reducedMotion }) {
         <div className="wa-row out">
           <div className="wa-bubble" data-cursor-target="archive-reply">
             <div className="wa-reply"><div className="r-name">Vishal</div><div className="r-text">The export needs to keep reply threads intact</div></div>
-            On it — exporting the whole channel now, check <span className="wa-mention">@Ravi</span> too 🗂️
+            On it - exporting the whole channel now, check <span className="wa-mention">@Ravi</span> too 🗂️
             <div className="wa-meta-line"><span className="time">10:42</span><span className="ticks">{Icon.ticks}</span></div>
           </div>
         </div>

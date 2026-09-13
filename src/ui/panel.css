@@ -25,7 +25,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  z-index: 2147483646;
+  z-index: 2147483647;
   background: var(--wa-bg);
   color: var(--wa-text);
   border: 1px solid var(--wa-border);
@@ -574,7 +574,7 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 2147483645;
+  z-index: 2147483646;
   min-width: 52px;
   height: 52px;
   padding: 0 18px 0 15px;
@@ -584,7 +584,8 @@
   color: #fff;
   font-size: 13.5px;
   font-weight: 700;
-  cursor: pointer;
+  cursor: grab;
+  touch-action: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   display: none;
   align-items: center;
@@ -601,7 +602,14 @@
 }
 
 #wa-rich-export-fab:active {
+  cursor: grabbing;
   transform: translateY(0) scale(0.97);
+}
+
+#wa-rich-export-fab.wa-xp-dragging {
+  animation: none;
+  transition: none;
+  cursor: grabbing;
 }
 
 #wa-rich-export-fab .wa-fab-icon {
