@@ -8,7 +8,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-0e7a5b?style=flat-square)](LICENSE)
 [![Chrome](https://img.shields.io/badge/chrome-supported-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](#installation)
 [![Edge](https://img.shields.io/badge/edge-supported-0078D7?style=flat-square&logo=microsoftedge&logoColor=white)](#installation)
-[![Status](https://img.shields.io/badge/status-store%20review-b8863a?style=flat-square)](#publishing-to-the-chrome-web-store--microsoft-edge-add-ons)
+[![Edge Add-ons](https://img.shields.io/badge/edge%20add--ons-live-0078D7?style=flat-square&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc)
+[![Chrome Status](https://img.shields.io/badge/chrome%20store-in%20review-b8863a?style=flat-square)](#publishing-to-the-chrome-web-store--microsoft-edge-add-ons)
 
 **Export the WhatsApp Web chat you have open into an offline, WhatsApp-styled HTML archive.**
 Replies, stickers, images, documents and voice notes — kept the way WhatsApp showed them to you. No server. No upload.
@@ -125,19 +126,27 @@ whatsapp-rich-export/
 
 ## Installation
 
-WA Rich Export is currently distributed as source while the Chrome Web Store and Microsoft Edge Add-ons listings go through review (see [Publishing](#publishing-to-the-chrome-web-store--microsoft-edge-add-ons)). Both browsers are Chromium-based, so "load unpacked" works identically:
+### Microsoft Edge (live on the store)
+
+**[Get it from the Microsoft Edge Add-ons store →](https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc)**
+
+No developer mode needed. Click the link, hit **Get**, and the extension installs in one step.
+
+### Chrome (unpacked, pending store review)
+
+The Chrome Web Store listing is in review. Until it clears, load the extension directly:
 
 1. Clone or download this repository so you have a folder with `manifest.json` at its root.
    ```bash
    git clone https://github.com/itsMannuYadav/My-Whatsapp-Chat-Extension.git
    ```
-2. Open `chrome://extensions` (Chrome) or `edge://extensions` (Edge).
-3. Turn on **Developer mode** (top-right toggle in both browsers).
+2. Open `chrome://extensions`.
+3. Turn on **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the cloned folder (the one containing `manifest.json`).
 5. Open [https://web.whatsapp.com](https://web.whatsapp.com) and log in.
-6. Open any chat — the **WA Rich Export** panel appears at the top-right.
+6. Open any chat - the **WA Rich Export** panel appears at the top-right.
 
-Pulled newer code into the same folder later? Go back to the extensions page and click the refresh icon on the extension's card, then reload any open WhatsApp Web tab.
+Pulled newer code into the same folder later? Go back to `chrome://extensions` and click the refresh icon on the extension's card, then reload any open WhatsApp Web tab.
 
 ### Panel controls
 
@@ -246,7 +255,7 @@ Every push to your GitHub repo's default branch redeploys the site automatically
 
 ## Publishing to the Chrome Web Store & Microsoft Edge Add-ons
 
-Both stores accept the same Manifest V3 package, so you build one `.zip` and submit it twice.
+**Microsoft Edge Add-ons is live at version 1.0.9.** The Chrome Web Store listing is pending review. Both stores accept the same Manifest V3 package - build one `.zip` and submit it to both.
 
 ### 1 — Bump the version
 

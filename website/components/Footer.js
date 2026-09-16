@@ -23,6 +23,13 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <h4>Get the extension</h4>
+            <ul>
+              <li><a href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc" target="_blank" rel="noopener noreferrer">Edge Add-ons ↗</a></li>
+              <li><Link href="/install">Chrome (unpacked)</Link></li>
+            </ul>
+          </div>
+          <div>
             <h4>Legal</h4>
             <ul>
               <li><Link href="/privacy">Privacy policy</Link></li>

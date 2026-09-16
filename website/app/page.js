@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import StatCounter from '@/components/StatCounter';
 
 export default function HomePage() {
@@ -8,12 +9,19 @@ export default function HomePage() {
       <section className="hero">
         <div className="container">
           <div className="hero-copy">
-            <span className="eyebrow">Chrome &amp; Edge extension · Manifest V3</span>
+            <span className="eyebrow">Chrome &amp; Edge extension · Live on Edge Add-ons</span>
             <h1>Every conversation, kept exactly as WhatsApp showed it to you.</h1>
             <p className="lede">WA Rich Export reads the chat you currently have open on WhatsApp Web and writes it to an offline archive on your disk - replies quoted, stickers and photos inline, documents and voice notes attached, group senders labelled. Nothing is uploaded anywhere.</p>
             <div className="hero-ctas">
-              <Link className="btn btn-primary" href="/install">Get the extension</Link>
-              <a className="btn btn-ghost" href="#how-it-works">See how it works</a>
+              <a
+                href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get WA Rich Export from Microsoft Edge Add-ons"
+              >
+                <Image src="/edge-badge.svg" alt="Get it from Microsoft Edge Add-ons" width={180} height={52} priority />
+              </a>
+              <Link className="btn btn-ghost" href="/install">Chrome install guide</Link>
             </div>
             <div className="hero-meta">
               <span>Zero servers</span>
@@ -169,10 +177,10 @@ export default function HomePage() {
       <section id="cta">
         <div className="container center" style={{ maxWidth: 640, display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
           <h2 className="reveal">Your chats are already on your screen. Keep them properly.</h2>
-          <p className="reveal lede">Load it in under a minute - no store account needed while it&rsquo;s in review.</p>
+          <p className="reveal lede">Live on Edge Add-ons now. Chrome listing pending review - install from source in seconds.</p>
           <div className="hero-ctas reveal">
-            <Link className="btn btn-primary" href="/install">Read the install guide</Link>
-            <Link className="btn btn-ghost" href="/features">Explore every feature</Link>
+            <a className="btn btn-primary" href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc" target="_blank" rel="noopener noreferrer">Get it on Edge</a>
+            <Link className="btn btn-ghost" href="/install">Install on Chrome</Link>
           </div>
         </div>
       </section>

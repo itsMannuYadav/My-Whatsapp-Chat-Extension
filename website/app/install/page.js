@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export const metadata = {
-  title: 'Install',
+  title: "Install",
   description:
-    'How to install WA Rich Export in Chrome or Microsoft Edge, including loading it as an unpacked extension while it’s in store review.',
+    "Install WA Rich Export from the Microsoft Edge Add-ons store, or load it as an unpacked extension in Chrome while it awaits Chrome Web Store review.",
 };
 
 export default function InstallPage() {
@@ -11,13 +13,53 @@ export default function InstallPage() {
       <section style={{ paddingBottom: 16 }}>
         <div className="container page-intro">
           <span className="eyebrow reveal">Setup guide</span>
-          <h1 className="reveal h1-page">Installed and exporting in under a minute.</h1>
-          <p className="reveal lede">WA Rich Export is currently distributed as source while it goes through Chrome Web Store and Microsoft Edge Add-ons review. Loading it as an unpacked extension takes the same six steps in either browser.</p>
+          <h1 className="reveal h1-page">One click on Edge. Six steps on Chrome.</h1>
+          <p className="reveal lede">WA Rich Export is live on the Microsoft Edge Add-ons store - install it in one click with no developer mode required. For Chrome, use the unpacked install while it goes through Chrome Web Store review.</p>
+        </div>
+      </section>
+
+      <section id="edge-install" style={{ paddingTop: 8 }}>
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">Microsoft Edge</span>
+            <h2>One click from the official store</h2>
+            <p>No developer mode. No cloning. Just click and install.</p>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 32, flexWrap: 'wrap' }} className="reveal">
+            <a
+              href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-rich-chat-export/gclbjkggcippmhbnfndeninmnmpclkjc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get WA Rich Export from Microsoft Edge Add-ons"
+            >
+              <Image src="/edge-badge.svg" alt="Get it from Microsoft Edge Add-ons" width={220} height={64} priority />
+            </a>
+            <p style={{ color: 'var(--ink-soft)', maxWidth: 480 }}>
+              Opens the official listing on <strong>microsoftedge.microsoft.com</strong>. Click <strong>Get</strong> on that page, then <strong>Add extension</strong> in the confirmation dialog.
+            </p>
+          </div>
+          <div style={{ marginTop: 40 }} className="reveal">
+            <Image
+              src="/extension-screenshot.svg"
+              alt="WA Rich Export panel open on WhatsApp Web, showing an export in progress with the four-step progress bar"
+              width={880}
+              height={540}
+              style={{ width: '100%', height: 'auto', borderRadius: 12, border: '1px solid var(--line)' }}
+            />
+            <p style={{ marginTop: 12, fontSize: 13, color: 'var(--ink-faint)', textAlign: 'center' }}>
+              The floating panel attaches to WhatsApp Web automatically once the extension is installed.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="steps" style={{ paddingTop: 8 }}>
         <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">Google Chrome</span>
+            <h2>Load unpacked while store review clears</h2>
+            <p>Chrome Web Store listing is pending. These six steps get you running today.</p>
+          </div>
           <div className="ledger">
             <div className="ledger-row reveal">
               <div className="ledger-num">01</div>
@@ -29,15 +71,15 @@ export default function InstallPage() {
             <div className="ledger-row reveal">
               <div className="ledger-num">02</div>
               <div>
-                <h3>Open your browser&rsquo;s extensions page</h3>
-                <p>Chrome: go to <code>chrome://extensions</code>. Edge: go to <code>edge://extensions</code>. Both are Chromium-based, so the rest of the steps look identical.</p>
+                <h3>Open Chrome&rsquo;s extensions page</h3>
+                <p>Go to <code>chrome://extensions</code> in the address bar.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
               <div className="ledger-num">03</div>
               <div>
                 <h3>Turn on Developer mode</h3>
-                <p>It&rsquo;s a toggle in the top-right corner of the extensions page in both browsers.</p>
+                <p>It&rsquo;s a toggle in the top-right corner of the extensions page.</p>
               </div>
             </div>
             <div className="ledger-row reveal">
@@ -99,9 +141,9 @@ export default function InstallPage() {
       <section id="stores">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Coming to the stores</span>
+            <span className="eyebrow">Official stores</span>
             <h2>Chrome Web Store &amp; Edge Add-ons</h2>
-            <p>Once review clears, install becomes a single click from either official store - no developer mode required. This page will switch straight over to those links.</p>
+            <p>Edge is live now. Chrome listing is pending review - use the unpacked steps above in Chrome in the meantime.</p>
           </div>
           <div className="card-grid">
             <article className="card reveal">
@@ -109,10 +151,10 @@ export default function InstallPage() {
               <h3>Chrome Web Store</h3>
               <p>Listing pending. Until it&rsquo;s approved, use the unpacked install steps above in Chrome.</p>
             </article>
-            <article className="card reveal">
-              <span className="card-tag">In review</span>
+            <article className="card reveal" style={{ borderColor: 'var(--accent)', position: 'relative' }}>
+              <span className="card-tag" style={{ background: 'var(--accent-wash)', color: 'var(--accent-strong)' }}>Live now</span>
               <h3>Microsoft Edge Add-ons</h3>
-              <p>Listing pending. Until it&rsquo;s approved, use the unpacked install steps above in Edge.</p>
+              <p>Available in the official store - no developer mode required. One click installs it directly into Edge. <a className="link-accent" href="#edge-install">See install steps above.</a></p>
             </article>
           </div>
         </div>

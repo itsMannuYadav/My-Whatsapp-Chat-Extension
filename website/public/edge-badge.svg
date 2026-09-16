@@ -1,0 +1,38 @@
+<svg width="220" height="64" viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Get it from Microsoft Edge Add-ons">
+  <defs>
+    <linearGradient id="edge-btn-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <!-- Edge logo gradient: teal → blue → purple -->
+    <linearGradient id="edge-e-outer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#50e6ff"/>
+      <stop offset="60%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#7719aa"/>
+    </linearGradient>
+    <linearGradient id="edge-e-inner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#def1ff"/>
+      <stop offset="100%" stop-color="#50e6ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="220" height="64" rx="10" fill="url(#edge-btn-bg)" stroke="#333" stroke-width="1"/>
+
+  <!-- Edge "e" logo -->
+  <g transform="translate(16, 14)">
+    <!-- Outer "e" shape -->
+    <path d="M18,0 C10,0 3,5.4 1,13 C-1,20.5 2,28.5 8,33.5 C7,31.5 6.5,29 6.5,26.5 C6.5,18 12,11 19,10 C19,10 20.5,9.9 22,10 C14.5,10 9,16 9,23 C9,30 14.5,36 22,36 C26,36 29.5,34.3 32,31.5 C34.5,28.8 36,25.1 36,21 C36,9.4 28,0 18,0 Z" fill="url(#edge-e-outer)"/>
+    <!-- Horizontal stripe through "e" -->
+    <path d="M6.5,21.5 L30,21.5 C30,21.5 30.5,25 28,27 C25.5,29 22,29 22,29 C16.5,29 12,25 12,19.5 C12,14 16.5,10 22,10 C22,10 16,10.5 11,15 C8,18 8,21.5 8,21.5 Z" fill="url(#edge-e-inner)" opacity="0.6"/>
+  </g>
+
+  <!-- Text: "Get it from" small -->
+  <text x="68" y="25" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#a0a0a0" letter-spacing="0.02em">Get it from</text>
+
+  <!-- Text: "Microsoft Edge" big -->
+  <text x="68" y="43" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="15.5" font-weight="600" fill="#ffffff" letter-spacing="-0.01em">Microsoft Edge</text>
+
+  <!-- "Add-ons" smaller below -->
+  <text x="68" y="57" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="10" fill="#a0a0a0">Add-ons</text>
+</svg>

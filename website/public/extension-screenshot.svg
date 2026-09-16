@@ -1,0 +1,204 @@
+<svg width="880" height="540" viewBox="0 0 880 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WA Rich Export extension panel open on WhatsApp Web, showing an export in progress">
+  <defs>
+    <linearGradient id="wa-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111b21"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="panel-head" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1fae82"/>
+      <stop offset="100%" stop-color="#0e7a5b"/>
+    </linearGradient>
+    <linearGradient id="bar-fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1fae82"/>
+      <stop offset="100%" stop-color="#dba653"/>
+    </linearGradient>
+    <clipPath id="browser-clip">
+      <rect x="0" y="0" width="880" height="540" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Browser chrome -->
+  <rect width="880" height="540" rx="12" fill="#1e1e1e"/>
+  <rect x="0" y="0" width="880" height="40" rx="12" fill="#2d2d2d"/>
+  <rect x="0" y="20" width="880" height="20" fill="#2d2d2d"/>
+
+  <!-- Traffic light dots -->
+  <circle cx="24" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="44" cy="20" r="6" fill="#febc2e"/>
+  <circle cx="64" cy="20" r="6" fill="#28c840"/>
+
+  <!-- URL bar -->
+  <rect x="160" y="8" width="360" height="24" rx="12" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="340" y="24" font-family="'Courier New', Arial, sans-serif" font-size="12" fill="#888" text-anchor="middle">web.whatsapp.com</text>
+
+  <!-- WhatsApp Web background -->
+  <rect x="0" y="40" width="880" height="500" fill="url(#wa-bg)"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="280" height="500" fill="#111b21"/>
+  <rect x="280" y="40" width="1" height="500" fill="#222d34"/>
+
+  <!-- Sidebar search -->
+  <rect x="16" y="56" width="248" height="36" rx="18" fill="#202c33"/>
+  <text x="140" y="79" font-family="Arial, sans-serif" font-size="13" fill="#8696a0" text-anchor="middle">Search or start new chat</text>
+
+  <!-- Chat list items in sidebar -->
+  <g transform="translate(0, 106)">
+    <!-- Active chat -->
+    <rect x="0" y="0" width="280" height="70" fill="#2a3942"/>
+    <circle cx="44" cy="35" r="22" fill="#2c3e50"/>
+    <text x="44" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a0b4bf" text-anchor="middle">S</text>
+    <text x="78" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9edef">Sundarbans</text>
+    <text x="78" y="48" font-family="Arial, sans-serif" font-size="12" fill="#8696a0">Reminder: standup moved to 9:30</text>
+    <text x="258" y="28" font-family="Arial, sans-serif" font-size="11" fill="#8696a0" text-anchor="end">10:42</text>
+
+    <!-- Other chats -->
+    <rect x="0" y="70" width="280" height="1" fill="#222d34"/>
+    <circle cx="44" cy="105" r="22" fill="#1a3a4a"/>
+    <text x="44" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7ec8e3" text-anchor="middle">V</text>
+    <text x="78" y="98" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9edef">Vishal</text>
+    <text x="78" y="118" font-family="Arial, sans-serif" font-size="12" fill="#8696a0">Got it, reviewing now...</text>
+    <text x="258" y="98" font-family="Arial, sans-serif" font-size="11" fill="#8696a0" text-anchor="end">09:04</text>
+
+    <rect x="0" y="140" width="280" height="1" fill="#222d34"/>
+    <circle cx="44" cy="175" r="22" fill="#2d1b4a"/>
+    <text x="44" y="181" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#b39ddb" text-anchor="middle">D</text>
+    <text x="78" y="168" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9edef">Design Team</text>
+    <text x="78" y="188" font-family="Arial, sans-serif" font-size="12" fill="#8696a0">Kiran: Check the final brief</text>
+    <text x="258" y="168" font-family="Arial, sans-serif" font-size="11" fill="#8696a0" text-anchor="end">Yesterday</text>
+  </g>
+
+  <!-- Chat area header -->
+  <rect x="281" y="40" width="599" height="58" fill="#202c33"/>
+  <circle cx="318" cy="69" r="20" fill="#2c3e50"/>
+  <text x="318" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a0b4bf" text-anchor="middle">S</text>
+  <text x="348" y="63" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#e9edef">Sundarbans</text>
+  <text x="348" y="80" font-family="Arial, sans-serif" font-size="12" fill="#8696a0">online</text>
+
+  <!-- Chat messages -->
+  <g transform="translate(281, 100)">
+    <!-- Date header -->
+    <rect x="220" y="8" width="160" height="22" rx="11" fill="#182229"/>
+    <text x="300" y="23" font-family="Arial, sans-serif" font-size="12" fill="#8696a0" text-anchor="middle">Today</text>
+
+    <!-- Incoming message -->
+    <rect x="12" y="40" width="300" height="46" rx="8" fill="#202c33"/>
+    <text x="24" y="60" font-family="Arial, sans-serif" font-size="13" fill="#e9edef">Can you pull the design thread before Friday?</text>
+    <text x="298" y="78" font-family="Arial, sans-serif" font-size="10" fill="#8696a0" text-anchor="end">10:38</text>
+
+    <!-- Outgoing message with quote -->
+    <rect x="287" y="98" width="300" height="70" rx="8" fill="#005c4b"/>
+    <!-- Quote bar -->
+    <rect x="298" y="108" width="3" height="36" rx="1.5" fill="#1fae82"/>
+    <text x="308" y="122" font-family="Arial, sans-serif" font-size="11" fill="#53bdab">Vishal</text>
+    <text x="308" y="138" font-family="Arial, sans-serif" font-size="12" fill="#d1f4ec">the export needs reply threads...</text>
+    <text x="308" y="156" font-family="Arial, sans-serif" font-size="13" fill="#e9edef">On it - exporting the whole channel</text>
+    <text x="574" y="160" font-family="Arial, sans-serif" font-size="10" fill="#8696a0" text-anchor="end">10:42 ✓✓</text>
+
+    <!-- Incoming -->
+    <rect x="12" y="180" width="200" height="38" rx="8" fill="#202c33"/>
+    <text x="24" y="200" font-family="Arial, sans-serif" font-size="13" fill="#e9edef">Perfect, ping me the zip</text>
+    <text x="198" y="210" font-family="Arial, sans-serif" font-size="10" fill="#8696a0" text-anchor="end">10:43</text>
+
+    <!-- Input area -->
+    <rect x="0" y="380" width="599" height="60" fill="#202c33"/>
+    <rect x="12" y="392" width="490" height="36" rx="18" fill="#2a3942"/>
+    <text x="60" y="415" font-family="Arial, sans-serif" font-size="13" fill="#8696a0">Type a message</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- WA Rich Export floating panel (the hero)     -->
+  <!-- ============================================ -->
+  <g transform="translate(548, 110)">
+    <!-- Panel shadow -->
+    <rect x="4" y="4" width="300" height="290" rx="16" fill="#000" opacity="0.4"/>
+    <!-- Panel body -->
+    <rect x="0" y="0" width="300" height="290" rx="16" fill="#111b21" stroke="#2a3942" stroke-width="1.5"/>
+
+    <!-- Panel header -->
+    <rect x="0" y="0" width="300" height="48" rx="16" fill="url(#panel-head)"/>
+    <rect x="0" y="32" width="300" height="16" fill="#1fae82"/>
+
+    <!-- Header icon + title -->
+    <rect x="14" y="12" width="20" height="20" rx="5" fill="rgba(255,255,255,0.25)"/>
+    <rect x="18" y="17" width="12" height="2.5" rx="1" fill="#fff"/>
+    <rect x="18" y="22" width="8" height="2.5" rx="1" fill="#fff"/>
+    <text x="44" y="28" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">WA Rich Export</text>
+
+    <!-- Status dot -->
+    <circle cx="270" cy="24" r="5" fill="#3dd9a8">
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Minimize icon -->
+    <rect x="244" y="21" width="16" height="2" rx="1" fill="rgba(255,255,255,0.7)"/>
+
+    <!-- Chat info row -->
+    <g transform="translate(14, 64)">
+      <circle cx="22" cy="22" r="22" fill="#2c3e50"/>
+      <text x="22" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#a0b4bf" text-anchor="middle">S</text>
+      <text x="52" y="18" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#e9edef">Sundarbans</text>
+      <text x="52" y="36" font-family="Arial, sans-serif" font-size="11" fill="#8696a0">842 msgs loaded</text>
+    </g>
+
+    <!-- Divider -->
+    <rect x="14" y="120" width="272" height="1" fill="#2a3942"/>
+
+    <!-- History depth selector -->
+    <g transform="translate(14, 132)">
+      <rect x="0" y="0" width="84" height="26" rx="6" fill="#2a3942" stroke="#1fae82" stroke-width="1.5"/>
+      <text x="42" y="17" font-family="Arial, sans-serif" font-size="11" fill="#e9edef" text-anchor="middle">Last 1,000</text>
+      <rect x="90" y="0" width="84" height="26" rx="6" fill="#202c33"/>
+      <text x="132" y="17" font-family="Arial, sans-serif" font-size="11" fill="#8696a0" text-anchor="middle">Last 5,000</text>
+      <rect x="180" y="0" width="92" height="26" rx="6" fill="#202c33"/>
+      <text x="226" y="17" font-family="Arial, sans-serif" font-size="11" fill="#8696a0" text-anchor="middle">All synced</text>
+    </g>
+
+    <!-- Export steps -->
+    <g transform="translate(14, 176)">
+      <!-- Step 1: done -->
+      <circle cx="12" cy="12" r="12" fill="#1fae82"/>
+      <path d="M7 12l4 4 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="30" y="16" font-family="Arial, sans-serif" font-size="11" fill="#e9edef">Load</text>
+
+      <!-- Step 2: done -->
+      <circle cx="82" cy="12" r="12" fill="#1fae82"/>
+      <path d="M77 12l4 4 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="100" y="16" font-family="Arial, sans-serif" font-size="11" fill="#e9edef">Structure</text>
+
+      <!-- Step 3: active (media) -->
+      <circle cx="170" cy="12" r="12" fill="#dba653"/>
+      <circle cx="170" cy="12" r="5" fill="#fff">
+        <animate attributeName="r" values="5;7;5" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.6;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="188" y="16" font-family="Arial, sans-serif" font-size="11" fill="#e9edef">Media</text>
+
+      <!-- Step 4: pending -->
+      <circle cx="248" cy="12" r="12" fill="#2a3942" stroke="#3a4a52" stroke-width="1.5"/>
+      <text x="248" y="16" font-family="Arial, sans-serif" font-size="10" fill="#8696a0" text-anchor="middle">4</text>
+      <text x="266" y="16" font-family="Arial, sans-serif" font-size="11" fill="#8696a0">Package</text>
+    </g>
+
+    <!-- Progress bar -->
+    <g transform="translate(14, 218)">
+      <rect x="0" y="0" width="272" height="6" rx="3" fill="#2a3942"/>
+      <rect x="0" y="0" width="162" height="6" rx="3" fill="url(#bar-fill)">
+        <animate attributeName="width" values="60;162;162" dur="2s" fill="freeze"/>
+      </rect>
+    </g>
+
+    <!-- Status text -->
+    <text x="150" y="242" font-family="Arial, sans-serif" font-size="12" fill="#8696a0" text-anchor="middle">Downloading media... 128/240</text>
+
+    <!-- Divider -->
+    <rect x="14" y="252" width="272" height="1" fill="#2a3942"/>
+
+    <!-- Export button (disabled while running) -->
+    <rect x="14" y="262" width="272" height="18" rx="9" fill="#2a3942" opacity="0.5"/>
+    <text x="150" y="275" font-family="Arial, sans-serif" font-size="12" fill="#8696a0" text-anchor="middle">Exporting... please wait</text>
+  </g>
+
+  <!-- Version label -->
+  <text x="860" y="530" font-family="'Courier New', monospace" font-size="10" fill="#3a4a52" text-anchor="end">v1.0.9 · Live on Edge Add-ons</text>
+</svg>
