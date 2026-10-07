@@ -282,6 +282,12 @@ macOS / Linux:
 zip -r wa-rich-export.zip manifest.json icons src
 ```
 
+Or use the bundled script, which reads the version from `manifest.json`, always writes forward-slash paths (Windows PowerShell 5.1's `Compress-Archive` does not, and stores can reject that) and outputs to `dist/`:
+
+```bash
+python scripts/build_zip.py
+```
+
 Sanity-check the result before uploading — `manifest.json` should be the first thing listed, not `wa-rich-export/manifest.json`:
 
 ```bash
@@ -291,6 +297,7 @@ unzip -l wa-rich-export.zip | head
 ### 3 — Chrome Web Store
 
 1. Sign in to the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole) (a one-time **$5 USD** registration fee applies to your developer account, not per extension).
+   Ready-to-paste text for every field (description, permission justification, data-usage answers) is in [`docs/chrome-web-store-listing.md`](docs/chrome-web-store-listing.md).
 2. Click **New Item** and upload `wa-rich-export.zip`.
 3. Fill in the store listing:
    - **Name / summary** (132 characters) / **description** — what it does, plainly.

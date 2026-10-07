@@ -16,3 +16,4 @@ Thumbs.db
 
 # Packaged extension builds
 *.zip
+dist/
